@@ -16,7 +16,7 @@ class getSetStudentInfo
 
 
    // ! Getters
-   public function get_std_custome()
+   public function get_std_custom_id()
    {
       return $this->std_custom_id;
    }
@@ -62,7 +62,7 @@ class getSetStudentInfo
    }
 
    // ! Setters
-   public function set_std_custome_id($std_custom_id_var)
+   public function set_std_custom_id($std_custom_id_var)
    {
       $this->std_custom_id = $std_custom_id_var;
    }

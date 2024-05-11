@@ -23,14 +23,14 @@
       <section class="main__container sub-sec">
          <section class="sub-sec__forms sub-form">
             <div class="sub-form__div form-container">
-               <form class="form-container__content" action="">
+               <form class="form-container__content" action="../../controller/php/addStudentEntry.php" method="post">
                   <!-- Student ID -->
                   <div>
                      <div>
-                        <label for="student_id">Student ID:</label>
+                        <label for="studentId">Student ID:</label>
                      </div>
                      <div>
-                        <input type="text" name="student_id" id="student_id" placeholder="Enter Student ID" required>
+                        <input type="text" name="studentId" id="studentId" placeholder="Enter Student ID" required>
                      </div>
                   </div>
 
@@ -60,7 +60,7 @@
                         <label for="">Middle Initial:</label>
                      </div>
                      <div>
-                        <input type="text" name="middle_init" id="middle_init" placeholder="Enter Middle Initial">
+                        <input type="text" name="middleInit" id="middleInit" placeholder="Enter Middle Initial">
                      </div>
                   </div>
 
@@ -110,17 +110,17 @@
                         </div>
                         <div>
                            <div>
-                              <input type="radio" name="computer" id="computer" value="Computer" required>
+                              <input type="radio" name="device" id="computer" value="Computer" required>
                               <label for="">Computer</label>
                            </div>
 
                            <div>
-                              <input type="radio" name="computer" id="computer" value="Computer" required>
+                              <input type="radio" name="device" id="printer" value="Computer" required>
                               <label for="">Printer</label>
                            </div>
 
                            <div>
-                              <input type="radio" name="computer-print" id="computer-print" value="Computer & Printer" required>
+                              <input type="radio" name="device" id="computerPrint" value="Computer & Printer" required>
                               <label for="">Computer & Printer</label>
                            </div>
 
@@ -128,6 +128,9 @@
                      </div>
                   </div>
 
+                  <div>
+                     <input type="submit" name="submit" id="submit" value="create">
+                  </div>
                </form>
             </div>
          </section>
