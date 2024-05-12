@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<student>
+  <entry>
+    <id>332251</id>
+    <lastname>asd</lastname>
+    <firstname>asd</firstname>
+    <middlename>asdas</middlename>
+    <course>asd</course>
+    <major>adsasd</major>
+    <department>COE</department>
+    <device>Computer</device>
+  </entry>
+</student>

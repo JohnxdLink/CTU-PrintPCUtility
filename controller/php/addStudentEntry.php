@@ -3,11 +3,14 @@
 class addStudentEntry
 {
    private $encapsulated_student_info;
+   private $save_temp_xml;
 
    public function __construct()
    {
-      require_once 'getSetStudentInfo.php';
+      require 'getSetStudentInfo.php';
+      require '../php/xmlCtrl.php';
       $this->encapsulated_student_info = new getSetStudentInfo();
+      $this->save_temp_xml = new xmlCtrl();
    }
 
    public function processAddStudentEntry($postData)
@@ -31,6 +34,8 @@ class addStudentEntry
             $this->encapsulated_student_info->set_department($postData['department']);
             $this->encapsulated_student_info->set_utility_device($postData['device']);
          }
+
+         $this->save_temp_xml->xml_control($this->encapsulated_student_info->get_std_custom_id(), $this->encapsulated_student_info->get_lname(), $this->encapsulated_student_info->get_fname(), $this->encapsulated_student_info->get_m_init_name(), $this->encapsulated_student_info->get_course(), $this->encapsulated_student_info->get_major(), $this->encapsulated_student_info->get_department(), $this->encapsulated_student_info->get_utility_device());
       } catch (Exception $e) {
          throw new Exception(" Add Student Entry Is Not Set.");
       }

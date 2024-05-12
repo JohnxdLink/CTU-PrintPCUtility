@@ -1,6 +1,6 @@
 <?php
-require_once 'getSetAdminCredentials.php';
-require_once 'connectDb.php';
+require 'getSetAdminCredentials.php';
+require 'connectDb.php';
 
 class loginAdmin
 {

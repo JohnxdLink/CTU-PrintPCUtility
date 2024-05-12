@@ -1,6 +1,6 @@
 <?php
 
-require_once 'getDbDetails.php';
+require 'getDbDetails.php';
 
 class connectDb
 {
