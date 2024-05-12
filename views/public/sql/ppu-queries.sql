@@ -20,18 +20,32 @@ CREATE TABLE
       l_name VARCHAR(50) NOT NULL,
       f_name VARCHAR(50) NOT NULL,
       m_init_name VARCHAR(10) NOT NULL,
+      PRIMARY KEY (student_id)
+   );
+
+CREATE TABLE
+   school (
+      school_id INT NOT NULL AUTO_INCREMENT,
+      fk_student_id INT,
       course VARCHAR(50) NOT NUll,
       major VARCHAR(50),
       department VARCHAR(50),
-      PRIMARY KEY (student_id)
+      PRIMARY KEY (school_id),
+      FOREIGN KEY (fk_student_id) REFERENCES student_info (student_id)
    );
 
 CREATE TABLE
    utility (
       utility_id INT NOT NULL AUTO_INCREMENT,
-      student_id INT,
+      fk_student_id INT,
       device VARCHAR(50) NOT NULL,
       device_date_time DATETIME,
       PRIMARY KEY (utility_id),
-      FOREIGN KEY (student_id) REFERENCES student_info (student_id)
+      FOREIGN KEY (fk_student_id) REFERENCES student_info (student_id)
    );
+
+DROP TABLE utility;
+
+DROP TABLE school;
+
+DROP TABLE student_info;
