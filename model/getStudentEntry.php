@@ -1,5 +1,6 @@
 <?php
 
+$execute = new getStudentEntry();
 class getStudentEntry
 {
    private $db_conn;
@@ -15,6 +16,7 @@ class getStudentEntry
 
    public function insertStudentEntry()
    {
+
       try {
          $xml_student = simplexml_load_file('./xml/temp-entry.xml');
 
@@ -52,9 +54,9 @@ class getStudentEntry
                   $sql_insrt_utility = "INSERT INTO utility (fk_student_id, device, device_date_time) VALUES ($lastInsertedId, '{$student['device']}', NOW());";
 
                   if ($connection->query($sql_insrt_utility) === TRUE) {
-                     $this->xml_ctrl->removeAllChildNodes();
-                     header("Location: ../views/admin/index.php");
-                     break;
+                     $this->selectStudentEntry();
+                     header("Location: ../controller/php/xmlCtrl.php");
+                     exit;
                   } else {
                      throw new Exception("Error inserting record utility: " . $connection->error);
                   }
@@ -65,6 +67,7 @@ class getStudentEntry
                throw new Exception("Error inserting record entry: " . $connection->error);
             }
          }
+
 
          // Close connection
          $this->db_conn->closeConnection();
@@ -97,12 +100,10 @@ class getStudentEntry
                $this->xml_ctrl->xmlSelectEntryControl($std_custom_id, $l_name, $f_name, $m_init_name, $course, $major, $department, $device, $device_date_time);
             }
          }
+         $this->db_conn->closeConnection();
       } catch (Exception $e) {
          echo 'Caught exception: ',  $e->getMessage(), "\n";
       }
    }
 }
-
-$run = new getStudentEntry();
-$run->insertStudentEntry();
-$run->selectStudentEntry();
+$execute->insertStudentEntry();

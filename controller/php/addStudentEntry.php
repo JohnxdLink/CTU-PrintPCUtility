@@ -1,5 +1,7 @@
 <?php
 
+$execute = new addStudentEntry();
+
 class addStudentEntry
 {
    private $encapsulated_student_info;
@@ -34,7 +36,6 @@ class addStudentEntry
             $this->encapsulated_student_info->set_department($postData['department']);
             $this->encapsulated_student_info->set_utility_device($postData['device']);
          }
-
          $this->save_temp_xml->xmlControl($this->encapsulated_student_info->get_std_custom_id(), $this->encapsulated_student_info->get_lname(), $this->encapsulated_student_info->get_fname(), $this->encapsulated_student_info->get_m_init_name(), $this->encapsulated_student_info->get_course(), $this->encapsulated_student_info->get_major(), $this->encapsulated_student_info->get_department(), $this->encapsulated_student_info->get_utility_device());
          header("Location: ../../model/getStudentEntry.php");
          exit;
@@ -44,5 +45,4 @@ class addStudentEntry
    }
 }
 
-$runEntry = new addStudentEntry();
-$runEntry->processAddStudentEntry($_POST);
+$execute->processAddStudentEntry($_POST);

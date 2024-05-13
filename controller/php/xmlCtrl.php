@@ -1,6 +1,7 @@
 <?php
 
-class XmlCtrl
+$execute = new xmlCtrl();
+class xmlCtrl
 {
    private $xmlFilePath = '../../model/xml/temp-entry.xml';
    private $xmlSelectEntryPath = '../model/xml/temp-select-entry.xml';
@@ -23,7 +24,7 @@ class XmlCtrl
          $xmlEntry->addChild('department', $department);
          $xmlEntry->addChild('device', $device);
 
-         $this->saveXML($xmlStudent, $this->xmlFilePath);
+         $this->saveXML($xmlStudent);
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();
       }
@@ -31,8 +32,6 @@ class XmlCtrl
 
    public function xmlSelectEntryControl($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device, $datetime)
    {
-      $execute = new XmlCtrl();
-
       try {
          $xmlStudent = simplexml_load_file($this->xmlSelectEntryPath);
          if ($xmlStudent === false) {
@@ -59,14 +58,13 @@ class XmlCtrl
          $xmlEntry->addChild('device', $device);
          $xmlEntry->addChild('datetime', $datetime);
 
-         $this->saveXML($xmlStudent, $this->xmlSelectEntryPath);
-         $execute->removeAllChildNodes();
+         $this->saveSelectedXML($xmlStudent);
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();
       }
    }
 
-   public function removeAllChildNodes()
+   public function removeAllChildNodes($removeAll = false)
    {
       try {
          if (file_exists($this->xmlFilePath)) {
@@ -74,13 +72,14 @@ class XmlCtrl
             $formatDom->load($this->xmlFilePath);
             $xmlPath = new DOMXPath($formatDom);
 
-            $entries = $xmlPath->query('//entry');
-            foreach ($entries as $entry) {
-               $entry->parentNode->removeChild($entry);
+            if ($removeAll) {
+               $entries = $xmlPath->query('//entry');
+               foreach ($entries as $entry) {
+                  $entry->parentNode->removeChild($entry);
+               }
             }
 
             $formatDom->save($this->xmlFilePath);
-            echo "All child nodes removed successfully.";
          } else {
             throw new Exception("XML file not found: $this->xmlFilePath");
          }
@@ -89,7 +88,7 @@ class XmlCtrl
       }
    }
 
-   private function saveXML($xmlStudent, $filePaths)
+   private function saveXML($xmlStudent)
    {
       try {
          $formatDom = new DOMDocument('1.0');
@@ -98,9 +97,27 @@ class XmlCtrl
          $formatDom->loadXML($xmlStudent->asXML());
          $saveFormatXml = $formatDom->saveXML();
 
-         file_put_contents($filePaths, $saveFormatXml);
+         file_put_contents($this->xmlFilePath, $saveFormatXml);
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
+   }
+
+   private function saveSelectedXML($xmlStudent)
+   {
+      try {
+         $formatDom = new DOMDocument('1.0');
+         $formatDom->preserveWhiteSpace = false;
+         $formatDom->formatOutput = true;
+         $formatDom->loadXML($xmlStudent->asXML());
+         $saveFormatXml = $formatDom->saveXML();
+
+         file_put_contents($this->xmlSelectEntryPath, $saveFormatXml);
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();
       }
    }
 }
+
+$execute->removeAllChildNodes(true);
+header("Location: ../../views/admin/index.php");

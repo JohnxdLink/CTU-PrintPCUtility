@@ -1,13 +1,4 @@
 <?xml version="1.0"?>
 <student>
-  <entry>
-    <id>3222677</id>
-    <lastname>Castro</lastname>
-    <firstname>John Christian</firstname>
-    <middlename>C.</middlename>
-    <course>BSIT</course>
-    <major>Info-Tech</major>
-    <department>COT</department>
-    <device>Computer</device>
-  </entry>
+  
 </student>
