@@ -17,9 +17,6 @@
 
    </header>
    <main class="container-main main">
-      <section class="main__nav">
-
-      </section>
       <section class="main__container sub-sec">
          <section class="sub-sec__forms sub-form">
             <div class="sub-form__div form-container">
@@ -134,6 +131,47 @@
                </form>
             </div>
          </section>
+      </section>
+
+      <section class="main_table_seciton table-sec">
+         <?php
+         $xml_student_entry = simplexml_load_file('../../model/xml/temp-select-entry.xml');
+         ?>
+         <div class="table-sec__container table">
+            <table class="table__style">
+               <thead>
+                  <tr>
+                     <th>ID No.</th>
+                     <th>Student ID</th>
+                     <th>Last Name</th>
+                     <th>First Name</th>
+                     <th>Middle Initial</th>
+                     <th>Course</th>
+                     <th>Major</th>
+                     <th>Department</th>
+                     <th>Device</th>
+                     <th>Date & Time</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <?php foreach ($xml_student_entry->entry as $entry) : ?>
+                     <tr>
+                        <td><?= $entry->student_id ?></td>
+                        <td><?= $entry->stdcustomid ?></td>
+                        <td><?= $entry->lastname ?></td>
+                        <td><?= $entry->firstname ?></td>
+                        <td><?= $entry->middlename ?></td>
+                        <td><?= $entry->course ?></td>
+                        <td><?= $entry->major ?></td>
+                        <td><?= $entry->department ?></td>
+                        <td><?= $entry->device ? $entry->device : "N/A" ?></td>
+                        <td><?= $entry->datetime ?></td>
+                     </tr>
+                  <?php endforeach; ?>
+               </tbody>
+            </table>
+         </div>
+
       </section>
    </main>
    <footer class="container-footer">

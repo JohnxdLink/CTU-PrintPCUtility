@@ -48,4 +48,28 @@
     <device>Computer And Printer</device>
     <datetime>2024-05-13 21:27:32</datetime>
   </entry>
+  <entry>
+    <student_id>5</student_id>
+    <stdcustomid>12561</stdcustomid>
+    <lastname>Oljol</lastname>
+    <firstname>Raina</firstname>
+    <middlename>C.</middlename>
+    <course>BSCS</course>
+    <major>Data Minng</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-13 22:29:48</datetime>
+  </entry>
+  <entry>
+    <student_id>6</student_id>
+    <stdcustomid>124151</stdcustomid>
+    <lastname>Oljol</lastname>
+    <firstname>Raia</firstname>
+    <middlename>C.</middlename>
+    <course>BEED</course>
+    <major>Filipino</major>
+    <department>CEAS</department>
+    <device>Printer</device>
+    <datetime>2024-05-13 22:30:45</datetime>
+  </entry>
 </student>
