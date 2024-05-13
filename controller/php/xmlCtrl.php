@@ -1,57 +1,68 @@
 <?php
 
-class xmlCtrl
+class XmlCtrl
 {
-   public function xml_control($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device)
+   private $xmlFilePath = '../../model/xml/temp-entry.xml';
+
+   public function xmlControl($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device)
    {
-      $xml_student = simplexml_load_file('../../model/xml/temp-entry.xml');
-      $xml_entry = $xml_student->addChild('entry');
-      $xml_entry->addChild('id', $studentId);
-      $xml_entry->addChild('lastname', $lname);
-      $xml_entry->addChild('firstname', $fname);
-      $xml_entry->addChild('middlename', $middleInit);
-      $xml_entry->addChild('course', $course);
-      $xml_entry->addChild('major', $major);
-      $xml_entry->addChild('department', $department);
-      $xml_entry->addChild('device', $device);
+      try {
+         $xmlStudent = simplexml_load_file($this->xmlFilePath);
+         if ($xmlStudent === false) {
+            throw new Exception("Failed to load XML file: $this->xmlFilePath");
+         }
 
-      $format_dom = new DOMDocument('1.0');
-      $format_dom->preserveWhiteSpace = false;
-      $format_dom->formatOutput = true;
-      $format_dom->loadXML($xml_student->asXML());
-      $save_format_xml = $format_dom->saveXML();
+         $xmlEntry = $xmlStudent->addChild('entry');
+         $xmlEntry->addChild('id', $studentId);
+         $xmlEntry->addChild('lastname', $lname);
+         $xmlEntry->addChild('firstname', $fname);
+         $xmlEntry->addChild('middlename', $middleInit);
+         $xmlEntry->addChild('course', $course);
+         $xmlEntry->addChild('major', $major);
+         $xmlEntry->addChild('department', $department);
+         $xmlEntry->addChild('device', $device);
 
-      file_put_contents('../../model/xml/temp-entry.xml', $save_format_xml);
+         $this->saveXML($xmlStudent);
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
    }
 
    public function removeAllChildNodes()
    {
-      $xmlFilePath = '../model/xml/temp-entry.xml';
-      if (file_exists($xmlFilePath)) {
-         $dom = new DOMDocument();
-         $dom->load($xmlFilePath);
-         $xpath = new DOMXPath($dom);
+      try {
+         if (file_exists($this->xmlFilePath)) {
+            $formatDom = new DOMDocument();
+            $formatDom->load($this->xmlFilePath);
+            $xmlPath = new DOMXPath($formatDom);
 
-         $entries = $xpath->query('//entry');
-         foreach ($entries as $entry) {
-            $entry->parentNode->removeChild($entry);
+            $entries = $xmlPath->query('//entry');
+            foreach ($entries as $entry) {
+               $entry->parentNode->removeChild($entry);
+            }
+
+            $formatDom->save($this->xmlFilePath);
+            echo "All child nodes removed successfully.";
+         } else {
+            throw new Exception("XML file not found: $this->xmlFilePath");
          }
-
-         $dom->save($xmlFilePath);
-         echo "All child nodes removed successfully.";
-      } else {
-         echo "XML file not found.";
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
       }
    }
 
-   private function saveXML($xml_student)
+   private function saveXML($xmlStudent)
    {
-      $format_dom = new DOMDocument('1.0');
-      $format_dom->preserveWhiteSpace = false;
-      $format_dom->formatOutput = true;
-      $format_dom->loadXML($xml_student->asXML());
-      $save_format_xml = $format_dom->saveXML();
+      try {
+         $formatDom = new DOMDocument('1.0');
+         $formatDom->preserveWhiteSpace = false;
+         $formatDom->formatOutput = true;
+         $formatDom->loadXML($xmlStudent->asXML());
+         $saveFormatXml = $formatDom->saveXML();
 
-      file_put_contents('../model/xml/temp-entry.xml', $save_format_xml);
+         file_put_contents($this->xmlFilePath, $saveFormatXml);
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
    }
 }
