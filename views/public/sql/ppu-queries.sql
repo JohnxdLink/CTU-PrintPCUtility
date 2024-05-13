@@ -13,6 +13,12 @@ INSERT INTO
 VALUES
    ('admin', 'admin');
 
+DROP TABLE utility;
+
+DROP TABLE school;
+
+DROP TABLE student_info;
+
 CREATE TABLE
    student_info (
       student_id INT NOT NULL AUTO_INCREMENT,
@@ -43,9 +49,3 @@ CREATE TABLE
       PRIMARY KEY (utility_id),
       FOREIGN KEY (fk_student_id) REFERENCES student_info (student_id)
    );
-
-DROP TABLE utility;
-
-DROP TABLE school;
-
-DROP TABLE student_info;

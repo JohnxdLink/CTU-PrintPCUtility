@@ -23,4 +23,35 @@ class xmlCtrl
 
       file_put_contents('../../model/xml/temp-entry.xml', $save_format_xml);
    }
+
+   public function removeAllChildNodes()
+   {
+      $xmlFilePath = '../model/xml/temp-entry.xml';
+      if (file_exists($xmlFilePath)) {
+         $dom = new DOMDocument();
+         $dom->load($xmlFilePath);
+         $xpath = new DOMXPath($dom);
+
+         $entries = $xpath->query('//entry');
+         foreach ($entries as $entry) {
+            $entry->parentNode->removeChild($entry);
+         }
+
+         $dom->save($xmlFilePath);
+         echo "All child nodes removed successfully.";
+      } else {
+         echo "XML file not found.";
+      }
+   }
+
+   private function saveXML($xml_student)
+   {
+      $format_dom = new DOMDocument('1.0');
+      $format_dom->preserveWhiteSpace = false;
+      $format_dom->formatOutput = true;
+      $format_dom->loadXML($xml_student->asXML());
+      $save_format_xml = $format_dom->saveXML();
+
+      file_put_contents('../model/xml/temp-entry.xml', $save_format_xml);
+   }
 }

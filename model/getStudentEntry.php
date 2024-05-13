@@ -1,16 +1,16 @@
 <?php
 
-class getSetStudentInfo
+class getStudentEntry
 {
    private $db_conn;
-   private $read_temp_xml;
+   private $xml_ctrl;
 
    public function __construct()
    {
       require 'connectDb.php';
       require '../controller/php/xmlCtrl.php';
       $this->db_conn = new connectDb();
-      $this->read_temp_xml = new xmlCtrl();
+      $this->xml_ctrl = new xmlCtrl();
    }
 
    public function insertStudentEntry()
@@ -52,6 +52,8 @@ class getSetStudentInfo
                   $sql_insrt_utility = "INSERT INTO utility (fk_student_id, device, device_date_time) VALUES ($lastInsertedId, '{$student['device']}', NOW());";
 
                   if ($connection->query($sql_insrt_utility) === TRUE) {
+                     $this->xml_ctrl->removeAllChildNodes();
+                     header("Location: ../views/admin/index.php");
                      break;
                   } else {
                      throw new Exception("Error inserting record utility: " . $connection->error);
@@ -72,5 +74,5 @@ class getSetStudentInfo
    }
 }
 
-$run = new getSetStudentInfo();
+$run = new getStudentEntry();
 $run->insertStudentEntry();
