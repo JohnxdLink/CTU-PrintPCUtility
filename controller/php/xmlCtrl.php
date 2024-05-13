@@ -3,6 +3,7 @@
 class XmlCtrl
 {
    private $xmlFilePath = '../../model/xml/temp-entry.xml';
+   private $xmlSelectEntryPath = '../model/xml/temp-select-entry.xml';
 
    public function xmlControl($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device)
    {
@@ -22,7 +23,44 @@ class XmlCtrl
          $xmlEntry->addChild('department', $department);
          $xmlEntry->addChild('device', $device);
 
-         $this->saveXML($xmlStudent);
+         $this->saveXML($xmlStudent, $this->xmlFilePath);
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
+   }
+
+   public function xmlSelectEntryControl($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device, $datetime)
+   {
+      $execute = new XmlCtrl();
+
+      try {
+         $xmlStudent = simplexml_load_file($this->xmlSelectEntryPath);
+         if ($xmlStudent === false) {
+            throw new Exception("Failed to load XML file: $this->xmlSelectEntryPath");
+         }
+
+         // ! Check if the entry already exists
+         foreach ($xmlStudent->entry as $entry) {
+            if ((string)$entry->id === $studentId && (string)$entry->lastname === $lname && (string)$entry->firstname === $fname && (string)$entry->middlename === $middleInit && (string)$entry->course === $course && (string)$entry->major === $major && (string)$entry->department === $department && (string)$entry->device === $device && (string)$entry->datetime === $datetime) {
+               // ! Entry already exists, no need to add it again
+               return;
+            }
+         }
+
+         // ! Entry does not exist, add it to the XML
+         $xmlEntry = $xmlStudent->addChild('entry');
+         $xmlEntry->addChild('id', $studentId);
+         $xmlEntry->addChild('lastname', $lname);
+         $xmlEntry->addChild('firstname', $fname);
+         $xmlEntry->addChild('middlename', $middleInit);
+         $xmlEntry->addChild('course', $course);
+         $xmlEntry->addChild('major', $major);
+         $xmlEntry->addChild('department', $department);
+         $xmlEntry->addChild('device', $device);
+         $xmlEntry->addChild('datetime', $datetime);
+
+         $this->saveXML($xmlStudent, $this->xmlSelectEntryPath);
+         $execute->removeAllChildNodes();
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();
       }
@@ -51,7 +89,7 @@ class XmlCtrl
       }
    }
 
-   private function saveXML($xmlStudent)
+   private function saveXML($xmlStudent, $filePaths)
    {
       try {
          $formatDom = new DOMDocument('1.0');
@@ -60,7 +98,7 @@ class XmlCtrl
          $formatDom->loadXML($xmlStudent->asXML());
          $saveFormatXml = $formatDom->saveXML();
 
-         file_put_contents($this->xmlFilePath, $saveFormatXml);
+         file_put_contents($filePaths, $saveFormatXml);
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();
       }

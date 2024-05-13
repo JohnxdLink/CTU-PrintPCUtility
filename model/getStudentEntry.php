@@ -26,7 +26,7 @@ class getStudentEntry
          $this->db_conn->connect();
          $connection = $this->db_conn->getConnection();
 
-         // Loop through each entry in the XML and store data in the array
+         // ! Loop through each entry in the XML and store data in the array
          foreach ($xml_student->entry as $entry) {
             $student = [
                'id' => (string)$entry->id,
@@ -72,7 +72,37 @@ class getStudentEntry
          echo 'Caught exception: ',  $e->getMessage(), "\n";
       }
    }
+
+   public function selectStudentEntry()
+   {
+      try {
+         $this->db_conn->connect();
+         $connection = $this->db_conn->getConnection();
+
+         $sql_slct_join_entry = "SELECT si.std_custom_id, si.l_name, si.f_name, si.m_init_name, sc.course, sc.major, sc.department, ut.device, ut.device_date_time FROM student_info si JOIN school sc ON si.student_id = sc.fk_student_id JOIN utility ut ON si.student_id = ut.fk_student_id;";
+         $execute_query = $connection->query($sql_slct_join_entry);
+
+         if ($execute_query->num_rows > 0) {
+            while ($student_entries_row = $execute_query->fetch_assoc()) {
+               $std_custom_id = $student_entries_row['std_custom_id'];
+               $l_name = $student_entries_row['l_name'];
+               $f_name = $student_entries_row['f_name'];
+               $m_init_name = $student_entries_row['m_init_name'];
+               $course = $student_entries_row['course'];
+               $major = $student_entries_row['major'];
+               $department = $student_entries_row['department'];
+               $device = $student_entries_row['device'];
+               $device_date_time = $student_entries_row['device_date_time'];
+
+               $this->xml_ctrl->xmlSelectEntryControl($std_custom_id, $l_name, $f_name, $m_init_name, $course, $major, $department, $device, $device_date_time);
+            }
+         }
+      } catch (Exception $e) {
+         echo 'Caught exception: ',  $e->getMessage(), "\n";
+      }
+   }
 }
 
 $run = new getStudentEntry();
 $run->insertStudentEntry();
+$run->selectStudentEntry();

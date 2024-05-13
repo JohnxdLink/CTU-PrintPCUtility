@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<student>
+  <entry>
+    <id>1001</id>
+    <lastname>Smith</lastname>
+    <firstname>John</firstname>
+    <middlename>A</middlename>
+    <course>Computer Science</course>
+    <major>Software Engineering</major>
+    <department>Engineering</department>
+    <device>Laptop</device>
+    <datetime>2024-05-13 09:00:00</datetime>
+  </entry>
+  <entry>
+    <id>1002</id>
+    <lastname>Doe</lastname>
+    <firstname>Jane</firstname>
+    <middlename>B</middlename>
+    <course>Business Administration</course>
+    <major>Marketing</major>
+    <department>Business</department>
+    <device>Smartphone</device>
+    <datetime>2024-05-13 10:30:00</datetime>
+  </entry>
+  <entry>
+    <id>1003</id>
+    <lastname>Johnson</lastname>
+    <firstname>Michael</firstname>
+    <middlename>C</middlename>
+    <course>Biology</course>
+    <major>Genetics</major>
+    <department>Science</department>
+    <device>Tablet</device>
+    <datetime>2024-05-13 11:45:00</datetime>
+  </entry>
+  <entry>
+    <id>1004</id>
+    <lastname>Williams</lastname>
+    <firstname>Emily</firstname>
+    <middlename>D</middlename>
+    <course>Psychology</course>
+    <major>Clinical Psychology</major>
+    <department>Social Science</department>
+    <device>Desktop</device>
+    <datetime>2024-05-13 13:15:00</datetime>
+  </entry>
+  <entry>
+    <id>1005</id>
+    <lastname>Brown</lastname>
+    <firstname>Christopher</firstname>
+    <middlename>E</middlename>
+    <course>Mechanical Engineering</course>
+    <major>Thermal Engineering</major>
+    <department>Engineering</department>
+    <device>Smartwatch</device>
+    <datetime>2024-05-13 14:30:00</datetime>
+  </entry>
+  <entry>
+    <id>322677</id>
+    <lastname>Castro</lastname>
+    <firstname>John Christian</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-13 11:15:26</datetime>
+  </entry>
+  <entry>
+    <id>322677</id>
+    <lastname>Castro</lastname>
+    <firstname>John Christian</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-13 11:15:38</datetime>
+  </entry>
+  <entry>
+    <id>322677</id>
+    <lastname>Castro</lastname>
+    <firstname>John Christian</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-13 11:16:37</datetime>
+  </entry>
+  <entry>
+    <id>322677</id>
+    <lastname>Castro</lastname>
+    <firstname>John Christian</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-13 11:16:47</datetime>
+  </entry>
+  <entry>
+    <id>3222677</id>
+    <lastname>Castro</lastname>
+    <firstname>John Christian</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-13 11:26:41</datetime>
+  </entry>
+</student>
