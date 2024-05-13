@@ -30,7 +30,7 @@ class xmlCtrl
       }
    }
 
-   public function xmlSelectEntryControl($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device, $datetime)
+   public function xmlSelectEntryControl($student_id, $std_custom_id, $lname, $fname, $middleInit, $course, $major, $department, $device, $datetime)
    {
       try {
          $xmlStudent = simplexml_load_file($this->xmlSelectEntryPath);
@@ -38,17 +38,18 @@ class xmlCtrl
             throw new Exception("Failed to load XML file: $this->xmlSelectEntryPath");
          }
 
-         // ! Check if the entry already exists
+         // Check if the entry already exists
          foreach ($xmlStudent->entry as $entry) {
-            if ((string)$entry->id === $studentId && (string)$entry->lastname === $lname && (string)$entry->firstname === $fname && (string)$entry->middlename === $middleInit && (string)$entry->course === $course && (string)$entry->major === $major && (string)$entry->department === $department && (string)$entry->device === $device && (string)$entry->datetime === $datetime) {
-               // ! Entry already exists, no need to add it again
+            if ((string)$entry->student_id === $student_id && (string)$entry->stdcustomid === $std_custom_id && (string)$entry->lastname === $lname && (string)$entry->firstname === $fname && (string)$entry->middlename === $middleInit && (string)$entry->course === $course && (string)$entry->major === $major && (string)$entry->department === $department && (string)$entry->device === $device && (string)$entry->datetime === $datetime) {
+               // Entry already exists, no need to add it again
                return;
             }
          }
 
-         // ! Entry does not exist, add it to the XML
+         // Entry does not exist, add it to the XML
          $xmlEntry = $xmlStudent->addChild('entry');
-         $xmlEntry->addChild('id', $studentId);
+         $xmlEntry->addChild('student_id', $student_id);
+         $xmlEntry->addChild('stdcustomid', $std_custom_id);
          $xmlEntry->addChild('lastname', $lname);
          $xmlEntry->addChild('firstname', $fname);
          $xmlEntry->addChild('middlename', $middleInit);
@@ -63,6 +64,7 @@ class xmlCtrl
          echo 'Error: ' . $e->getMessage();
       }
    }
+
 
    public function removeAllChildNodes($removeAll = false)
    {

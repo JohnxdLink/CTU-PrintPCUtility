@@ -99,6 +99,7 @@ VALUES
 
 -- ! SELECT JOIN
 SELECT
+   si.student_id,
    si.std_custom_id,
    si.l_name,
    si.f_name,

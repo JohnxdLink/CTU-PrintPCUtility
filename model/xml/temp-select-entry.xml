@@ -1,4 +1,51 @@
 <?xml version="1.0"?>
 <student>
-
+  <entry>
+    <student_id>1</student_id>
+    <stdcustomid>3222677</stdcustomid>
+    <lastname>Castro</lastname>
+    <firstname>John</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device/>
+    <datetime>2024-05-13 21:21:44</datetime>
+  </entry>
+  <entry>
+    <student_id>2</student_id>
+    <stdcustomid>3222123</stdcustomid>
+    <lastname>Guzman</lastname>
+    <firstname>Jhon</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Printer</device>
+    <datetime>2024-05-13 21:23:45</datetime>
+  </entry>
+  <entry>
+    <student_id>3</student_id>
+    <stdcustomid>3212566</stdcustomid>
+    <lastname>Tomabiao</lastname>
+    <firstname>Nina</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COE</department>
+    <device/>
+    <datetime>2024-05-13 21:24:16</datetime>
+  </entry>
+  <entry>
+    <student_id>4</student_id>
+    <stdcustomid>124125</stdcustomid>
+    <lastname>TIto</lastname>
+    <firstname>Ralph</firstname>
+    <middlename>T.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer And Printer</device>
+    <datetime>2024-05-13 21:27:32</datetime>
+  </entry>
 </student>

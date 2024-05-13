@@ -115,12 +115,12 @@
                            </div>
 
                            <div>
-                              <input type="radio" name="device" id="printer" value="Computer" required>
+                              <input type="radio" name="device" id="printer" value="Printer" required>
                               <label for="">Printer</label>
                            </div>
 
                            <div>
-                              <input type="radio" name="device" id="computerPrint" value="Computer & Printer" required>
+                              <input type="radio" name="device" id="computerPrint" value="Computer And Printer" required>
                               <label for="">Computer & Printer</label>
                            </div>
 
