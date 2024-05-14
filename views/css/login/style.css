@@ -29,4 +29,59 @@ section.body-sec__background::before {
    bottom: 0;
    right: 0;
    opacity: 0.30;
+   z-index: -1;
+}
+
+main.body-sec__main {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+section.main-sec__container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   background-color: #fdfbf9;
+   border: 1px solid #dbb356;
+   border-radius: 10px;
+   box-shadow: 3px 7px 15px #0000007d;
+}
+
+div.container-login__forms {
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+}
+
+div.login-form__header {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+}
+
+div.login-form__header-text {
+   display: flex;
+   flex-direction: column;
+}
+
+img.header__logo--edit {
+   width: 70px;
+   height: 70px;
+}
+
+img.login__image--edit {
+   width: 400px;
+   height: 400px;
+}
+
+form.login-form__container {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
 }

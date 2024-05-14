@@ -148,7 +148,7 @@
          </nav>
       </section>
 
-      <section class="main_table_seciton table-sec">
+      <section class="main-table-seciton table-sec">
          <?php
          $xml_student_entry = simplexml_load_file('../../model/xml/temp-select-entry.xml');
          ?>
