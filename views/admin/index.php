@@ -19,8 +19,8 @@
    <main class="container-main main">
 
       <section class="main__container sub-sec">
-
-         <section class="sub-sec__forms sub-form w3-animate-right" style="display: none;">
+         <!-- Add Form Entries -->
+         <section id="add_entries_content" class="sub-sec__forms sub-form w3-animate-left">
             <div class="sub-form__header">
                <h3>Enter Entries</h3>
             </div>
@@ -138,10 +138,11 @@
             </div>
          </section>
 
-         <section class="sub-sec__forms sub-form">
+         <!-- Update And Delete Entries -->
+         <section id="edit_delete_content" class="sub-sec__forms sub-form--temp-hide w3-animate-right">
             <div class="sub-form__header">
                <div>
-                  <button>Back</button>
+                  <button onclick="open_add_entries()">Back</button>
                </div>
                <div>
                   <h3>Edit Entries</h3>
@@ -255,10 +256,12 @@
 
          <nav class="sub-sec__nav">
             <div>
-               <button>Edit</button>
+               <button onclick="open_update_entries()">Edit</button>
             </div>
             <div>
-               <button>Refresh</button>
+               <form action="">
+                  <input type="submit" name="" id="" onclick="refresh()" value="Refresh">
+               </form>
             </div>
          </nav>
       </section>
@@ -307,6 +310,8 @@
    <footer class="container-footer">
       <h6>Under Development @05/11/2024</h6>
    </footer>
+
+   <script src="../js/admin/script.js"></script>
 </body>
 
 </html>

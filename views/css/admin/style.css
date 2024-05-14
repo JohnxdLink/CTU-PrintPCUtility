@@ -47,11 +47,17 @@ section.main__container {
 
 section.sub-sec__forms {
    height: 90%;
+   display: flex;
+   flex-direction: column;
 }
 
 div.sub-form__header {
    display: flex;
    align-items: center;
+}
+
+section.sub-form--temp-hide {
+   display: none;
 }
 
 nav.sub-sec__nav {
