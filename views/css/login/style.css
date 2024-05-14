@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.whole-container {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+/* ! Login Page Background */
+section.body-sec__background::before {
+   content: '';
+   background-image: url(../../public/images/backgrounds/ctu-main-building.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   opacity: 0.30;
+}

@@ -18,6 +18,9 @@
    </header>
    <main class="container-main main">
       <section class="main__container sub-sec">
+         <section class="sub-sec__header">
+            <h3>Enter Entries</h3>
+         </section>
          <section class="sub-sec__forms sub-form">
             <div class="sub-form__div form-container">
                <form class="form-container__content" action="../../controller/php/addStudentEntry.php" method="post" target="_self">
@@ -126,11 +129,23 @@
                   </div>
 
                   <div>
-                     <input type="submit" name="submit" id="submit" value="create">
+                     <input type="submit" name="submit" id="submit" value="Submit">
                   </div>
                </form>
             </div>
          </section>
+
+         <nav class="sub-sec__nav">
+            <div>
+               <button>Add</button>
+            </div>
+            <div>
+               <button>Refresh</button>
+            </div>
+            <div>
+               <button>Edit</button>
+            </div>
+         </nav>
       </section>
 
       <section class="main_table_seciton table-sec">
