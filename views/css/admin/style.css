@@ -51,7 +51,7 @@ section.sub-sec__forms {
 
 div.sub-form__header {
    display: flex;
-   justify-content: center;
+   align-items: center;
 }
 
 nav.sub-sec__nav {

@@ -20,7 +20,7 @@
 
       <section class="main__container sub-sec">
 
-         <section class="sub-sec__forms sub-form w3-animate-right">
+         <section class="sub-sec__forms sub-form w3-animate-right" style="display: none;">
             <div class="sub-form__header">
                <h3>Enter Entries</h3>
             </div>
@@ -133,6 +133,121 @@
 
                   <div>
                      <input type="submit" name="submit" id="submit" value="Submit">
+                  </div>
+               </form>
+            </div>
+         </section>
+
+         <section class="sub-sec__forms sub-form">
+            <div class="sub-form__header">
+               <div>
+                  <button>Back</button>
+               </div>
+               <div>
+                  <h3>Edit Entries</h3>
+               </div>
+            </div>
+            <div class="sub-form__div form-container">
+               <form class="form-container__content" action="">
+                  <div>
+                     <div>
+                        <input type="text" name="" id="" placeholder="Enter ID No.">
+                     </div>
+                     <div>
+                        <input type="submit" name="" id="" value="Search">
+                     </div>
+                  </div>
+               </form>
+
+               <form class="form-container__content" action="">
+                  <div>
+                     <div>
+                        <label for="">Student ID:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Lastname:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Firstname:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Middle Initial:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Course:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Major:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Department:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Device Used:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <label for="">Date & TImelog:</label>
+                     </div>
+                     <div>
+                        <input type="text" name="" id="">
+                     </div>
+                  </div>
+
+                  <div>
+                     <div>
+                        <input type="submit" name="edit" id="edit" value="Edit">
+                     </div>
+                     <div>
+                        <input type="submit" name="delete" id="delete" value="Delete">
+                     </div>
                   </div>
                </form>
             </div>
