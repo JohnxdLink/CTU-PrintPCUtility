@@ -17,11 +17,14 @@
 
    </header>
    <main class="container-main main">
+
       <section class="main__container sub-sec">
-         <section class="sub-sec__header">
-            <h3>Enter Entries</h3>
-         </section>
-         <section class="sub-sec__forms sub-form">
+
+         <section class="sub-sec__forms sub-form w3-animate-right">
+            <div class="sub-form__header">
+               <h3>Enter Entries</h3>
+            </div>
+
             <div class="sub-form__div form-container">
                <form class="form-container__content" action="../../controller/php/addStudentEntry.php" method="post" target="_self">
                   <!-- Student ID -->
@@ -137,13 +140,10 @@
 
          <nav class="sub-sec__nav">
             <div>
-               <button>Add</button>
+               <button>Edit</button>
             </div>
             <div>
                <button>Refresh</button>
-            </div>
-            <div>
-               <button>Edit</button>
             </div>
          </nav>
       </section>
