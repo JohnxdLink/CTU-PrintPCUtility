@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php
-require('../../controller/php/getSetUpdateDeleteEntry.php');
-$value_get_entry = new getSetUpdateDeleteEntry();
-?>
-
 <html lang="en">
 
 <head>
@@ -145,6 +140,10 @@ $value_get_entry = new getSetUpdateDeleteEntry();
 
          <!-- Update And Delete Entries -->
          <section id="edit_delete_content" class="sub-sec__forms sub-form--temp-hide w3-animate-right">
+            <?php
+            $xml_selected_entry = simplexml_load_file('../../model/xml/temp-entry.xml');
+            ?>
+
             <div class="sub-form__header">
                <div>
                   <button onclick="open_add_entries()">Back</button>
@@ -168,7 +167,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Student ID:</label>
                      </div>
                      <div>
-                        <input type="text" name="customid" id="customid" value="<?php $value_get_entry->get_customID(); ?>">
+                        <input type="text" name="customid" id="customid" value="<?php echo (!empty($xml_selected_entry->entry->id)) ? $xml_selected_entry->entry->id : ""; ?>">
                      </div>
                   </div>
 
@@ -177,7 +176,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Lastname:</label>
                      </div>
                      <div>
-                        <input type="text" name="lastname" id="lastname">
+                        <input type="text" name="lastname" id="lastname" value="<?php echo (!empty($xml_selected_entry->entry->lastname)) ? $xml_selected_entry->entry->lastname : ""; ?>">
                      </div>
                   </div>
 
@@ -186,7 +185,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Firstname:</label>
                      </div>
                      <div>
-                        <input type="text" name="firstname" id="firstname">
+                        <input type="text" name="firstname" id="firstname" value="<?php echo (!empty($xml_selected_entry->entry->firstname)) ? $xml_selected_entry->entry->firstname : ""; ?>">
                      </div>
                   </div>
 
@@ -195,7 +194,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Middle Initial:</label>
                      </div>
                      <div>
-                        <input type="text" name="middlename" id="middlename">
+                        <input type="text" name="middlename" id="middlename" value="<?php echo (!empty($xml_selected_entry->entry->middlename)) ? $xml_selected_entry->entry->middlename : ""; ?>">
                      </div>
                   </div>
 
@@ -204,7 +203,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Course:</label>
                      </div>
                      <div>
-                        <input type="text" name="course" id="course">
+                        <input type="text" name="course" id="course" value="<?php echo (!empty($xml_selected_entry->entry->course)) ? $xml_selected_entry->entry->course : ""; ?>">
                      </div>
                   </div>
 
@@ -213,7 +212,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Major:</label>
                      </div>
                      <div>
-                        <input type="text" name="major" id="major">
+                        <input type="text" name="major" id="major" <?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>>
                      </div>
                   </div>
 
@@ -222,7 +221,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Department:</label>
                      </div>
                      <div>
-                        <input type="text" name="department" id="department">
+                        <input type="text" name="department" id="department" value="<?php echo (!empty($xml_selected_entry->entry->department)) ? $xml_selected_entry->entry->department : ""; ?>">
                      </div>
                   </div>
 
@@ -231,7 +230,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Device Used:</label>
                      </div>
                      <div>
-                        <input type="text" name="device" id="device">
+                        <input type="text" name="device" id="device" value="<?php echo (!empty($xml_selected_entry->entry->device)) ? $xml_selected_entry->entry->device : ""; ?>">
                      </div>
                   </div>
 
@@ -240,7 +239,7 @@ $value_get_entry = new getSetUpdateDeleteEntry();
                         <label for="">Date & TImelog:</label>
                      </div>
                      <div>
-                        <input type="text" name="datetime" id="datetime">
+                        <input type="text" name="datetime" id="datetime" value="<?php echo (!empty($xml_selected_entry->entry->datetime)) ? $xml_selected_entry->entry->datetime : ""; ?>">
                      </div>
                   </div>
 

@@ -30,6 +30,34 @@ class xmlCtrl
       }
    }
 
+   public function xmlReadEntryControl($noid, $customid, $lastname, $firstname, $middlename, $course, $major, $department, $device, $datetime)
+   {
+      $this->removeAllChildNodes(true);
+
+      try {
+         $xmlStudent = simplexml_load_file($this->xmlFilePath);
+         if ($xmlStudent === false) {
+            throw new Exception("Failed to load XML file: $this->xmlFilePath");
+         }
+
+         $xmlEntry = $xmlStudent->addChild('entry');
+         $xmlEntry->addChild('noid', $noid);
+         $xmlEntry->addChild('id', $customid);
+         $xmlEntry->addChild('lastname', $lastname);
+         $xmlEntry->addChild('firstname', $firstname);
+         $xmlEntry->addChild('middlename', $middlename);
+         $xmlEntry->addChild('course', $course);
+         $xmlEntry->addChild('major', $major);
+         $xmlEntry->addChild('department', $department);
+         $xmlEntry->addChild('device', $device);
+         $xmlEntry->addChild('datetime', $datetime);
+
+         $this->saveXML($xmlStudent);
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
+   }
+
    public function xmlSelectEntryControl($student_id, $std_custom_id, $lname, $fname, $middleInit, $course, $major, $department, $device, $datetime)
    {
       try {

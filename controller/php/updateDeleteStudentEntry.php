@@ -6,11 +6,14 @@ class updateDeleteStudentEntry
 {
    private $update_entryPath = '../../model/xml/temp-select-entry.xml';
    private $get_set_update_delete_entry;
+   private $save_temp_xml;
 
    public function __construct()
    {
       require 'getSetUpdateDeleteEntry.php';
+      require '../php/xmlCtrl.php';
       $this->get_set_update_delete_entry = new getSetUpdateDeleteEntry();
+      $this->save_temp_xml = new xmlCtrl();
    }
 
    public function update_delete_student_entry($postData)
@@ -81,6 +84,8 @@ class updateDeleteStudentEntry
                   $this->get_set_update_delete_entry->set_department($student['department']);
                   $this->get_set_update_delete_entry->set_device($student['device']);
                   $this->get_set_update_delete_entry->set_datetime($student['datetime']);
+
+                  $this->save_temp_xml->xmlReadEntryControl($this->get_set_update_delete_entry->get_noID(), $this->get_set_update_delete_entry->get_customID(), $this->get_set_update_delete_entry->get_lastName(), $this->get_set_update_delete_entry->get_firstName(), $this->get_set_update_delete_entry->get_middleName(), $this->get_set_update_delete_entry->get_course(), $this->get_set_update_delete_entry->get_major(), $this->get_set_update_delete_entry->get_department(), $this->get_set_update_delete_entry->get_device(), $this->get_set_update_delete_entry->get_datetime());
                }
             }
          }
