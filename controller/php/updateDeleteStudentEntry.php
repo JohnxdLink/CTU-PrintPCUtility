@@ -25,6 +25,7 @@ class updateDeleteStudentEntry
          if (isset($update_btn_var)) {
             $this->read_xml_student_entry($postData['noid']);
             header('Location: ../../views/admin/index.php');
+            exit;
          }
       } catch (Exception $e) {
          throw new Exception("");

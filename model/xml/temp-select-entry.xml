@@ -84,4 +84,16 @@
     <device>Printer</device>
     <datetime>2024-05-15 10:24:09</datetime>
   </entry>
+  <entry>
+    <student_id>8</student_id>
+    <stdcustomid>613423</stdcustomid>
+    <lastname>Ibara</lastname>
+    <firstname>Clara</firstname>
+    <middlename>W.</middlename>
+    <course>BSIE</course>
+    <major/>
+    <department>COE</department>
+    <device>Computer</device>
+    <datetime>2024-05-15 15:35:38</datetime>
+  </entry>
 </student>
