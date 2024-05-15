@@ -19,19 +19,26 @@ class updateDeleteStudentEntry
    public function update_delete_student_entry($postData)
    {
       try {
-         $update_btn_var = $postData['search'];
+         $search_btn_var = $postData['search'];
+         $update_btn_var = $postData['update'];
+         $delete_btn_var = $postData['delete'];
 
+         if (isset($search_btn_var) || isset($update_btn_var) || isset($delete_btn_var)) {
+            if (isset($search_btn_var)) {
+               $this->read_xml_student_entry($postData['noid']);
+               return;
+            }
 
-         if (isset($update_btn_var)) {
-            $this->read_xml_student_entry($postData['noid']);
+            if (isset($update_btn_var)) {
+               $this->save_temp_xml->xmlReadEntryControl($postData['noid'], $postData['customid'], $postData['lastname'], $postData['firstname'], $postData['middlename'], $postData['course'], $postData['major'], $postData['department'], $postData['device'], $postData['datetime']);
+               return;
+            }
             header('Location: ../../views/admin/index.php');
-            exit;
          }
       } catch (Exception $e) {
          throw new Exception("");
       }
    }
-
    public function read_xml_student_entry($post_student_id)
    {
       try {

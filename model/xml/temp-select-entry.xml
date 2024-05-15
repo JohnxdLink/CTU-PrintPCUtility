@@ -96,4 +96,16 @@
     <device>Computer</device>
     <datetime>2024-05-15 15:35:38</datetime>
   </entry>
+  <entry>
+    <student_id>9</student_id>
+    <stdcustomid>789626</stdcustomid>
+    <lastname>Garidan</lastname>
+    <firstname>Jamia</firstname>
+    <middlename>W.</middlename>
+    <course>BEED</course>
+    <major>Filipino</major>
+    <department>CEAS</department>
+    <device>Computer</device>
+    <datetime>2024-05-15 21:35:31</datetime>
+  </entry>
 </student>

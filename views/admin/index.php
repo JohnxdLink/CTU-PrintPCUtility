@@ -156,7 +156,7 @@
                <form class="form-container__content" action="../../controller/php/updateDeleteStudentEntry.php" method="post">
                   <div>
                      <div>
-                        <input type="text" name="noid" id="noid" placeholder="Enter ID No.">
+                        <input type="text" name="noid" id="noid" placeholder="Enter ID No." value="<?php echo (!empty($xml_selected_entry->entry->noid)) ? $xml_selected_entry->entry->noid : ""; ?>">
                      </div>
                      <div>
                         <input type="submit" name="search" id="search" value="Search">
@@ -212,7 +212,7 @@
                         <label for="">Major:</label>
                      </div>
                      <div>
-                        <input type="text" name="major" id="major" <?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>>
+                        <input type="text" name="major" id="major" value="<?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>">
                      </div>
                   </div>
 
@@ -245,7 +245,7 @@
 
                   <div>
                      <div>
-                        <input type="submit" name="edit" id="edit" value="Edit">
+                        <input type="submit" name="update" id="update" value="Update">
                      </div>
                      <div>
                         <input type="submit" name="delete" id="delete" value="Delete">

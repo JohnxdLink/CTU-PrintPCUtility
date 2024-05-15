@@ -1,5 +1,7 @@
 <?php
 
+use Dotenv\Parser\Entry;
+
 $execute = new xmlCtrl();
 class xmlCtrl
 {
