@@ -149,7 +149,7 @@
                </div>
             </div>
             <div class="sub-form__div form-container">
-               <form class="form-container__content" action="">
+               <form class="form-container__content" action="" method="post">
                   <div>
                      <div>
                         <input type="text" name="" id="" placeholder="Enter ID No.">
@@ -158,9 +158,6 @@
                         <input type="submit" name="" id="" value="Search">
                      </div>
                   </div>
-               </form>
-
-               <form class="form-container__content" action="">
                   <div>
                      <div>
                         <label for="">Student ID:</label>

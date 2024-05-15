@@ -68,8 +68,7 @@ class getStudentEntry
             }
          }
 
-
-         // Close connection
+         // ! Close connection
          $this->db_conn->closeConnection();
       } catch (Exception $e) {
          echo 'Caught exception: ',  $e->getMessage(), "\n";

@@ -38,15 +38,15 @@ class xmlCtrl
             throw new Exception("Failed to load XML file: $this->xmlSelectEntryPath");
          }
 
-         // Check if the entry already exists
+         // ! Check if the entry already exists
          foreach ($xmlStudent->entry as $entry) {
             if ((string)$entry->student_id === $student_id && (string)$entry->stdcustomid === $std_custom_id && (string)$entry->lastname === $lname && (string)$entry->firstname === $fname && (string)$entry->middlename === $middleInit && (string)$entry->course === $course && (string)$entry->major === $major && (string)$entry->department === $department && (string)$entry->device === $device && (string)$entry->datetime === $datetime) {
-               // Entry already exists, no need to add it again
+               // ! Entry already exists, no need to add it again
                return;
             }
          }
 
-         // Entry does not exist, add it to the XML
+         // ! Entry does not exist, add it to the XML
          $xmlEntry = $xmlStudent->addChild('entry');
          $xmlEntry->addChild('student_id', $student_id);
          $xmlEntry->addChild('stdcustomid', $std_custom_id);
