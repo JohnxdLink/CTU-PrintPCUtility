@@ -72,4 +72,16 @@
     <device>Printer</device>
     <datetime>2024-05-13 22:30:45</datetime>
   </entry>
+  <entry>
+    <student_id>7</student_id>
+    <stdcustomid>3222611</stdcustomid>
+    <lastname>Galanoth</lastname>
+    <firstname>Artix</firstname>
+    <middlename>R.</middlename>
+    <course>BSCS</course>
+    <major>BA</major>
+    <department>COT</department>
+    <device>Printer</device>
+    <datetime>2024-05-15 10:24:09</datetime>
+  </entry>
 </student>

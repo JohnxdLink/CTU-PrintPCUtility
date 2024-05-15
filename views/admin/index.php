@@ -149,13 +149,13 @@
                </div>
             </div>
             <div class="sub-form__div form-container">
-               <form class="form-container__content" action="" method="post">
+               <form class="form-container__content" action="../../controller/php/updateDeleteStudentEntry.php" method="post">
                   <div>
                      <div>
-                        <input type="text" name="" id="" placeholder="Enter ID No.">
+                        <input type="text" name="noid" id="noid" placeholder="Enter ID No.">
                      </div>
                      <div>
-                        <input type="submit" name="" id="" value="Search">
+                        <input type="submit" name="search" id="search" value="Search">
                      </div>
                   </div>
                   <div>
@@ -163,7 +163,7 @@
                         <label for="">Student ID:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="customid" id="customid">
                      </div>
                   </div>
 
@@ -172,7 +172,7 @@
                         <label for="">Lastname:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="lastname" id="lastname">
                      </div>
                   </div>
 
@@ -181,7 +181,7 @@
                         <label for="">Firstname:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="firstname" id="firstname">
                      </div>
                   </div>
 
@@ -190,7 +190,7 @@
                         <label for="">Middle Initial:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="middlename" id="middlename">
                      </div>
                   </div>
 
@@ -199,7 +199,7 @@
                         <label for="">Course:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="course" id="course">
                      </div>
                   </div>
 
@@ -208,7 +208,7 @@
                         <label for="">Major:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="major" id="major">
                      </div>
                   </div>
 
@@ -217,7 +217,7 @@
                         <label for="">Department:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="department" id="department">
                      </div>
                   </div>
 
@@ -226,7 +226,7 @@
                         <label for="">Device Used:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="device" id="device">
                      </div>
                   </div>
 
@@ -235,7 +235,7 @@
                         <label for="">Date & TImelog:</label>
                      </div>
                      <div>
-                        <input type="text" name="" id="">
+                        <input type="text" name="datetime" id="datetime">
                      </div>
                   </div>
 
