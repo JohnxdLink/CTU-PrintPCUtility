@@ -44,7 +44,7 @@ class updateDeleteStudentEntry
       try {
          $xml_student = simplexml_load_file($this->update_entryPath);
 
-         // ! Check if XML file is loaded successfully
+         // Check if XML file is loaded successfully
          if ($xml_student === false) {
             throw new Exception('Failed to load XML file.');
          }
@@ -61,6 +61,7 @@ class updateDeleteStudentEntry
                'major' => (string)$entry->major,
                'department' => (string)$entry->department,
                'device' => (string)$entry->device,
+               'datetime' => (string)$entry->datetime,
             ];
          }
 
@@ -78,7 +79,7 @@ class updateDeleteStudentEntry
                   'major' => (string)$entry->major,
                   'department' => (string)$entry->department,
                   'device' => (string)$entry->device,
-                  'datetime' => (string)$entry->datetime
+                  'datetime' => (string)$entry->datetime,
                ];
 
                if ((string)$post_student_id === $student['noid']) {
@@ -96,10 +97,51 @@ class updateDeleteStudentEntry
                   $this->save_temp_xml->xmlReadEntryControl($this->get_set_update_delete_entry->get_noID(), $this->get_set_update_delete_entry->get_customID(), $this->get_set_update_delete_entry->get_lastName(), $this->get_set_update_delete_entry->get_firstName(), $this->get_set_update_delete_entry->get_middleName(), $this->get_set_update_delete_entry->get_course(), $this->get_set_update_delete_entry->get_major(), $this->get_set_update_delete_entry->get_department(), $this->get_set_update_delete_entry->get_device(), $this->get_set_update_delete_entry->get_datetime());
                }
             }
+         } else {
+            usort($entries, function ($a, $b) {
+               return strcmp($a['noid'], $b['noid']);
+            });
+
+            $found = $this->binary_search($entries, $post_student_id);
+            if ($found !== null) {
+               $this->get_set_update_delete_entry->set_noID($found['noid']);
+               $this->get_set_update_delete_entry->set_customID($found['customid']);
+               $this->get_set_update_delete_entry->set_lastName($found['lastname']);
+               $this->get_set_update_delete_entry->set_firstName($found['firstname']);
+               $this->get_set_update_delete_entry->set_middleName($found['middlename']);
+               $this->get_set_update_delete_entry->set_course($found['course']);
+               $this->get_set_update_delete_entry->set_major($found['major']);
+               $this->get_set_update_delete_entry->set_department($found['department']);
+               $this->get_set_update_delete_entry->set_device($found['device']);
+               $this->get_set_update_delete_entry->set_datetime($found['datetime']);
+
+               $this->save_temp_xml->xmlReadEntryControl($this->get_set_update_delete_entry->get_noID(), $this->get_set_update_delete_entry->get_customID(), $this->get_set_update_delete_entry->get_lastName(), $this->get_set_update_delete_entry->get_firstName(), $this->get_set_update_delete_entry->get_middleName(), $this->get_set_update_delete_entry->get_course(), $this->get_set_update_delete_entry->get_major(), $this->get_set_update_delete_entry->get_department(), $this->get_set_update_delete_entry->get_device(), $this->get_set_update_delete_entry->get_datetime());
+            }
          }
       } catch (Exception $e) {
-         throw new Exception("");
+         throw new Exception("An error occurred while reading the XML student entry: " . $e->getMessage());
       }
+   }
+
+   public function binary_search($entries, $target_id)
+   {
+      $low = 0;
+      $high = count($entries) - 1;
+
+      while ($low <= $high) {
+         $mid = intdiv($low + $high, 2);
+         $midVal = $entries[$mid]['noid'];
+
+         if ($midVal < $target_id) {
+            $low = $mid + 1;
+         } elseif ($midVal > $target_id) {
+            $high = $mid - 1;
+         } else {
+            return $entries[$mid];
+         }
+      }
+
+      return null;
    }
 }
 

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <student>
   <entry>
-    <noid>6</noid>
-    <id>124151</id>
-    <lastname>Oljol</lastname>
-    <firstname>Raia</firstname>
+    <noid>1</noid>
+    <id>3222677</id>
+    <lastname>Castro</lastname>
+    <firstname>John</firstname>
     <middlename>C.</middlename>
-    <course>BEED</course>
-    <major>English</major>
-    <department>CEAS</department>
-    <device>Printer</device>
-    <datetime>2024-05-13 22:30:45</datetime>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device/>
+    <datetime>2024-05-13 21:21:44</datetime>
   </entry>
 </student>
