@@ -17,14 +17,11 @@ class updateDeleteStudentEntry
    {
       try {
          $update_btn_var = $postData['search'];
-         $edit_btn_var = $postData['edit'];
-         $delete_btn_var = $postData['delete'];
+
 
          if (isset($update_btn_var)) {
             $this->read_xml_student_entry($postData['noid']);
-         }
-
-         if (isset($delete_btn_var)) {
+            header('Location: ../../views/admin/index.php');
          }
       } catch (Exception $e) {
          throw new Exception("");
@@ -74,8 +71,16 @@ class updateDeleteStudentEntry
                ];
 
                if ((string)$post_student_id === $student['noid']) {
-                  // Code here
-
+                  $this->get_set_update_delete_entry->set_noID($student['noid']);
+                  $this->get_set_update_delete_entry->set_customID($student['customid']);
+                  $this->get_set_update_delete_entry->set_lastName($student['lastname']);
+                  $this->get_set_update_delete_entry->set_firstName($student['firstname']);
+                  $this->get_set_update_delete_entry->set_middleName($student['middlename']);
+                  $this->get_set_update_delete_entry->set_course($student['course']);
+                  $this->get_set_update_delete_entry->set_major($student['major']);
+                  $this->get_set_update_delete_entry->set_department($student['department']);
+                  $this->get_set_update_delete_entry->set_device($student['device']);
+                  $this->get_set_update_delete_entry->set_datetime($student['datetime']);
                }
             }
          }

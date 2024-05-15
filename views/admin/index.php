@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+require('../../controller/php/getSetUpdateDeleteEntry.php');
+$value_get_entry = new getSetUpdateDeleteEntry();
+?>
+
 <html lang="en">
 
 <head>
@@ -163,7 +168,7 @@
                         <label for="">Student ID:</label>
                      </div>
                      <div>
-                        <input type="text" name="customid" id="customid">
+                        <input type="text" name="customid" id="customid" value="<?php $value_get_entry->get_customID(); ?>">
                      </div>
                   </div>
 
