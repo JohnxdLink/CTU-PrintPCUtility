@@ -69,13 +69,71 @@ nav.sub-sec__nav {
 
 section.main-table-seciton {
    width: 75%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
    z-index: 1;
 }
 
-div.table-sec__container {
-   overflow-y: auto;
+div.table-sec__count-entries-container {
    width: 100%;
-   height: 90%;
+   height: 20%;
+   padding: 0px 10px 0px 10px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+}
+
+div.table-sec__count-entries-container--flex-column {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+div.cnt-entry--other {
+   padding: 3px;
+   border-radius: 5px;
+   background-color: #dbb356;
+}
+
+div.cnt-entry__container {
+   width: 210px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+}
+
+div.dept-entry-con--color {
+   padding: 5px;
+   background-color: #dbb356;
+   border-radius: 5px;
+}
+
+img.cnt-entry--dept-image {
+   width: 50px;
+   height: 50px;
+}
+
+img.cnt-entry--dept-image-min-size {
+   width: 35px;
+   height: 35px;
+}
+
+div.table-sec__update-delete-container {
+   width: 100%;
+   height: 25%;
+   padding: 10px;
+}
+
+
+div.table-sec__container {
+   width: 100%;
+   height: 55%;
+   padding: 10px;
+   background-color: #dbb356;
+   overflow-y: auto;
 }
 
 

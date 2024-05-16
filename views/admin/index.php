@@ -268,6 +268,97 @@
       </section>
 
       <section class="main-table-seciton table-sec">
+         <div class="table-sec__count-entries-container cnt-entry">
+            <div class="table-sec__count-entries-container--flex-column">
+               <div class="cnt-entry__container cnt-entry--other">
+                  <div>
+                     <img class="cnt-entry--dept-image-min-size" src="../public/images/icons/entry.png" alt="">
+                  </div>
+                  <div class="cnt_entry__texts">
+                     <div>
+                        <h3>00</h3>
+                     </div>
+                     <div>
+                        <h5>Overall Entries</h5>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cnt-entry__container cnt-entry--other">
+                  <div>
+                     <img class="cnt-entry--dept-image-min-size" src="../public/images/icons/today.png" alt="">
+                  </div>
+                  <div class="cnt_entry__texts">
+                     <div>
+                        <h3>00</h3>
+                     </div>
+                     <div>
+                        <h5>Entries Today</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+            <div class="cnt-entry__container dept-entry-con--color">
+               <div>
+                  <img class="cnt-entry--dept-image" src="../public/images/logo/CEAS Logo.png" alt="">
+               </div>
+               <div class="cnt_entry__texts">
+                  <div>
+                     <h1>00</h1>
+                  </div>
+                  <div>
+                     <h4>CEAS</h4>
+                  </div>
+               </div>
+            </div>
+
+            <div class="cnt-entry__container dept-entry-con--color">
+               <div>
+                  <img class="cnt-entry--dept-image" src="../public/images/logo/CME Logo.png" alt="">
+               </div>
+               <div class="cnt_entry__texts">
+                  <div>
+                     <h1>00</h1>
+                  </div>
+                  <div>
+                     <h4>CEAS</h4>
+                  </div>
+               </div>
+            </div>
+
+            <div class="cnt-entry__container dept-entry-con--color">
+               <div>
+                  <img class="cnt-entry--dept-image" src="../public/images/logo/COE Logo.png" alt="">
+               </div>
+               <div class="cnt_entry__texts">
+                  <div>
+                     <h1>00</h1>
+                  </div>
+                  <div>
+                     <h4>COE</h4>
+                  </div>
+               </div>
+            </div>
+
+            <div class="cnt-entry__container dept-entry-con--color">
+               <div>
+                  <img class="cnt-entry--dept-image" src="../public/images/logo/COT Logo.png" alt="">
+               </div>
+               <div class="cnt_entry__texts">
+                  <div>
+                     <h1>00</h1>
+                  </div>
+                  <div>
+                     <h4>COT</h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="table-sec__update-delete-container">
+
+         </div>
          <?php
          $xml_student_entry = simplexml_load_file('../../model/xml/temp-select-entry.xml');
          ?>
