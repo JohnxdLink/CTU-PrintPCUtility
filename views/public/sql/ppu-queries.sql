@@ -66,3 +66,7 @@ FROM
    student_info si
    JOIN school sc ON si.student_id = sc.fk_student_id
    JOIN utility ut ON si.student_id = ut.fk_student_id;
+
+DELETE FROM student_info
+WHERE
+   student_id = 16;

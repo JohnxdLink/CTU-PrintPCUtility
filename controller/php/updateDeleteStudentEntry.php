@@ -34,7 +34,11 @@ class updateDeleteStudentEntry
          if (isset($update_btn_var)) {
             $this->save_temp_xml->xmlReadEntryControl($postData['noid'], $postData['customid'], $postData['lastname'], $postData['firstname'], $postData['middlename'], $postData['course'], $postData['major'], $postData['department'], $postData['device'], $postData['datetime']);
             header('Location: ../../model/updateStudentEntry.php');
-            //header('Location: ../../views/login/index.php');
+         }
+
+         if (isset($delete_btn_var)) {
+            $this->save_temp_xml->xmlReadEntryControl($postData['noid'], $postData['customid'], $postData['lastname'], $postData['firstname'], $postData['middlename'], $postData['course'], $postData['major'], $postData['department'], $postData['device'], $postData['datetime']);
+            header('Location: ../../model/deleteStudentEntry.php');
          }
       } catch (Exception $e) {
          throw new Exception("");
@@ -141,7 +145,3 @@ class updateDeleteStudentEntry
 }
 
 $execute->update_delete_student_entry($_POST);
-
-//header("Location: ../../model/updateStudentEntry.php");
-// header('Location: ../../views/admin/index.php');
-// exit;

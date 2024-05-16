@@ -17,7 +17,7 @@
     <stdcustomid>3222123</stdcustomid>
     <lastname>Guzman</lastname>
     <firstname>Jhon</firstname>
-    <middlename>Q.</middlename>
+    <middlename>W.</middlename>
     <course>BSIT</course>
     <major>Info-Tech</major>
     <department>COT</department>
@@ -181,15 +181,15 @@
     <datetime>2024-05-16 13:06:31</datetime>
   </entry>
   <entry>
-    <student_id>16</student_id>
-    <stdcustomid>124166</stdcustomid>
-    <lastname>Widow</lastname>
-    <firstname>Natasha</firstname>
-    <middlename>P.</middlename>
+    <student_id>17</student_id>
+    <stdcustomid>156537</stdcustomid>
+    <lastname>Tobirama</lastname>
+    <firstname>Norris</firstname>
+    <middlename>S.</middlename>
     <course>BEED</course>
-    <major>Science</major>
-    <department>COE</department>
-    <device>Computer</device>
-    <datetime>2024-05-16 13:07:24</datetime>
+    <major>Filipino</major>
+    <department/>
+    <device>Computer And Printer</device>
+    <datetime>2024-05-16 16:55:15</datetime>
   </entry>
 </student>

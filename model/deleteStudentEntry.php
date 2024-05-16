@@ -1,8 +1,8 @@
 <?php
 
-$execute = new updateStudentEntry();
+$execute = new deleteStudentEntry();
 
-class updateStudentEntry
+class deleteStudentEntry
 {
    private $db_conn;
    private $xml_ctrl;
@@ -15,7 +15,7 @@ class updateStudentEntry
       $this->xml_ctrl = new xmlCtrl();
    }
 
-   public function updateStudentEntry()
+   public function deleteStudentEntry()
    {
       try {
          $xml_student = simplexml_load_file('./xml/temp-entry.xml');
@@ -33,27 +33,20 @@ class updateStudentEntry
                'noid' => (string)$entry->noid, 'id' => (string)$entry->id, 'lastname' => (string)$entry->lastname, 'firstname' => (string)$entry->firstname, 'middlename' => (string)$entry->middlename, 'course' => (string)$entry->course, 'major' => (string)$entry->major, 'department' => (string)$entry->department, 'device' => (string)$entry->device, 'datetime' => (string)$entry->datetime
             ];
 
-            $sql_update_entry = "UPDATE student_info SET std_custom_id = '{$student['id']}', l_name = '{$student['lastname']}', f_name = '{$student['firstname']}', m_init_name = '{$student['middlename']}' WHERE student_id = '{$student['noid']}';";
+            $sql_delete_utility_entry = "DELETE FROM utility WHERE fk_student_id = '{$student['noid']}';";
 
-            if ($connection->query($sql_update_entry) === TRUE) {
-               $sql_update_school_entry = "UPDATE school SET course = '{$student['course']}', major = '{$student['major']}', department = '{$student['department']}' WHERE fk_student_id = '{$student['noid']}';";
 
-               if ($connection->query($sql_update_school_entry) === TRUE) {
-                  $sql_update_utility_entry = "UPDATE utility SET device = '{$student['device']}', device_date_time = '{$student['datetime']}' WHERE fk_student_id = '{$student['noid']}';";
-                  if ($connection->query($sql_update_utility_entry) === TRUE) {
-
+            if ($connection->query($sql_delete_utility_entry) === TRUE) {
+               $sql_delete_school_entry = "DELETE FROM school WHERE fk_student_id = '{$student['noid']}';";
+               if ($connection->query($sql_delete_school_entry) === TRUE) {
+                  $sql_delete_entry = "DELETE FROM student_info WHERE student_id = '{$student['noid']}';";
+                  if ($connection->query($sql_delete_entry) === TRUE) {
                      $this->xml_ctrl->removeOldSelectEntry();
                      $this->selectStudentEntry();
                      header('Location: ../controller/php/xmlCtrl.php');
                      exit;
-                  } else {
-                     throw new Exception("Error update record entry: " . $connection->error);
                   }
-               } else {
-                  throw new Exception("Error update record entry: " . $connection->error);
                }
-            } else {
-               throw new Exception("Error update record entry: " . $connection->error);
             }
          }
 
@@ -96,4 +89,4 @@ class updateStudentEntry
    }
 }
 
-$execute->updateStudentEntry();
+$execute->deleteStudentEntry();
