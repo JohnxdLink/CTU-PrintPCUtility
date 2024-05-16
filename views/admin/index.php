@@ -13,15 +13,29 @@
 </head>
 
 <body class="whole-container">
-   <header class="container-header">
-
+   <div class="body-sec__background"></div>
+   <header class="container-header header">
+      <div class="header__container">
+         <div>
+            <img class="header__mylogo--modify" src="../public/images/logo/castro-techno-logo.png" alt="">
+         </div>
+         <div>
+            <div>
+               <h4>Castro Technological University</h4>
+            </div>
+            <div>
+               <h6>Attendance Monitoring System</h6>
+            </div>
+         </div>
+      </div>
    </header>
    <main class="container-main main">
       <section class="main__container sub-sec">
          <!-- Add Form Entries -->
-         <section id="add_entries_content" class="sub-sec__forms sub-form">
+         <section class="sub-sec__forms sub-form">
             <div class="sub-form__header">
-               <h3>Enter Entries</h3>
+               <h3>Print PC Utility</h3>
+               <h6>(Please kindly type your entry)</h6>
             </div>
 
             <div class="sub-form__div form-container">
@@ -93,7 +107,7 @@
                            <label for="">Department:</label>
                         </div>
                         <div>
-                           <select name="department" id="department">
+                           <select name="department" id="department" required>
                               <option value="">Select what department</option>
                               <option value="COT">College Of Technology</option>
                               <option value="COE">College Of Engineering</option>
@@ -136,8 +150,10 @@
          </section>
       </section>
 
-      <section class="main-table-seciton table-sec">
+      <section class="main-table-section table-sec">
          <div class="table-sec__count-entries-container cnt-entry">
+
+            <!-- Entries -->
             <div class="table-sec__count-entries-container--flex-column">
                <div class="cnt-entry__container cnt-entry--other">
                   <div>
@@ -167,7 +183,6 @@
                   </div>
                </div>
             </div>
-
 
             <div class="cnt-entry__container dept-entry-con--color">
                <div>
@@ -226,6 +241,7 @@
             </div>
          </div>
 
+         <!-- Update And Delete Entries Container -->
          <div class="table-sec__update-delete-container update-delete">
             <?php
             $xml_selected_entry = simplexml_load_file('../../model/xml/temp-entry.xml');
