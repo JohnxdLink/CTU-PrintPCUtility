@@ -6,10 +6,10 @@
     <lastname>Castro</lastname>
     <firstname>John</firstname>
     <middlename>C.</middlename>
-    <course>BSIT</course>
+    <course>BSCS</course>
     <major>Info-Tech</major>
     <department>COT</department>
-    <device/>
+    <device>Printer</device>
     <datetime>2024-05-13 21:21:44</datetime>
   </entry>
 </student>

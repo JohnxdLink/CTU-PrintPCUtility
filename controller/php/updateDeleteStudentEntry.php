@@ -83,18 +83,7 @@ class updateDeleteStudentEntry
                ];
 
                if ((string)$post_student_id === $student['noid']) {
-                  $this->get_set_update_delete_entry->set_noID($student['noid']);
-                  $this->get_set_update_delete_entry->set_customID($student['customid']);
-                  $this->get_set_update_delete_entry->set_lastName($student['lastname']);
-                  $this->get_set_update_delete_entry->set_firstName($student['firstname']);
-                  $this->get_set_update_delete_entry->set_middleName($student['middlename']);
-                  $this->get_set_update_delete_entry->set_course($student['course']);
-                  $this->get_set_update_delete_entry->set_major($student['major']);
-                  $this->get_set_update_delete_entry->set_department($student['department']);
-                  $this->get_set_update_delete_entry->set_device($student['device']);
-                  $this->get_set_update_delete_entry->set_datetime($student['datetime']);
-
-                  $this->save_temp_xml->xmlReadEntryControl($this->get_set_update_delete_entry->get_noID(), $this->get_set_update_delete_entry->get_customID(), $this->get_set_update_delete_entry->get_lastName(), $this->get_set_update_delete_entry->get_firstName(), $this->get_set_update_delete_entry->get_middleName(), $this->get_set_update_delete_entry->get_course(), $this->get_set_update_delete_entry->get_major(), $this->get_set_update_delete_entry->get_department(), $this->get_set_update_delete_entry->get_device(), $this->get_set_update_delete_entry->get_datetime());
+                  $this->updated_entry($student['noid'], $student['customid'], $student['lastname'], $student['firstname'], $student['middlename'], $student['course'], $student['major'], $student['department'], $student['device'], $student['datetime']);
                }
             }
          } else {
@@ -104,23 +93,28 @@ class updateDeleteStudentEntry
 
             $found = $this->binary_search($entries, $post_student_id);
             if ($found !== null) {
-               $this->get_set_update_delete_entry->set_noID($found['noid']);
-               $this->get_set_update_delete_entry->set_customID($found['customid']);
-               $this->get_set_update_delete_entry->set_lastName($found['lastname']);
-               $this->get_set_update_delete_entry->set_firstName($found['firstname']);
-               $this->get_set_update_delete_entry->set_middleName($found['middlename']);
-               $this->get_set_update_delete_entry->set_course($found['course']);
-               $this->get_set_update_delete_entry->set_major($found['major']);
-               $this->get_set_update_delete_entry->set_department($found['department']);
-               $this->get_set_update_delete_entry->set_device($found['device']);
-               $this->get_set_update_delete_entry->set_datetime($found['datetime']);
-
-               $this->save_temp_xml->xmlReadEntryControl($this->get_set_update_delete_entry->get_noID(), $this->get_set_update_delete_entry->get_customID(), $this->get_set_update_delete_entry->get_lastName(), $this->get_set_update_delete_entry->get_firstName(), $this->get_set_update_delete_entry->get_middleName(), $this->get_set_update_delete_entry->get_course(), $this->get_set_update_delete_entry->get_major(), $this->get_set_update_delete_entry->get_department(), $this->get_set_update_delete_entry->get_device(), $this->get_set_update_delete_entry->get_datetime());
+               $this->updated_entry($found['noid'], $found['customid'], $found['lastname'], $found['firstname'], $found['middlename'], $found['course'], $found['major'], $found['department'], $found['device'], $found['datetime']);
             }
          }
       } catch (Exception $e) {
          throw new Exception("An error occurred while reading the XML student entry: " . $e->getMessage());
       }
+   }
+
+   public function updated_entry($noid, $customid, $lastname, $firstname, $middlename, $course, $major, $department, $device, $datetime)
+   {
+      $this->get_set_update_delete_entry->set_noID($noid);
+      $this->get_set_update_delete_entry->set_customID($customid);
+      $this->get_set_update_delete_entry->set_lastName($lastname);
+      $this->get_set_update_delete_entry->set_firstName($firstname);
+      $this->get_set_update_delete_entry->set_middleName($middlename);
+      $this->get_set_update_delete_entry->set_course($course);
+      $this->get_set_update_delete_entry->set_major($major);
+      $this->get_set_update_delete_entry->set_department($department);
+      $this->get_set_update_delete_entry->set_device($device);
+      $this->get_set_update_delete_entry->set_datetime($datetime);
+
+      $this->save_temp_xml->xmlReadEntryControl($this->get_set_update_delete_entry->get_noID(), $this->get_set_update_delete_entry->get_customID(), $this->get_set_update_delete_entry->get_lastName(), $this->get_set_update_delete_entry->get_firstName(), $this->get_set_update_delete_entry->get_middleName(), $this->get_set_update_delete_entry->get_course(), $this->get_set_update_delete_entry->get_major(), $this->get_set_update_delete_entry->get_department(), $this->get_set_update_delete_entry->get_device(), $this->get_set_update_delete_entry->get_datetime());
    }
 
    public function binary_search($entries, $target_id)
