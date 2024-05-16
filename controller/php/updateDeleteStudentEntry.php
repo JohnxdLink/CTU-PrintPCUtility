@@ -26,14 +26,12 @@ class updateDeleteStudentEntry
          if (isset($search_btn_var) || isset($update_btn_var) || isset($delete_btn_var)) {
             if (isset($search_btn_var)) {
                $this->read_xml_student_entry($postData['noid']);
-               return;
             }
 
             if (isset($update_btn_var)) {
                $this->save_temp_xml->xmlReadEntryControl($postData['noid'], $postData['customid'], $postData['lastname'], $postData['firstname'], $postData['middlename'], $postData['course'], $postData['major'], $postData['department'], $postData['device'], $postData['datetime']);
-               return;
+               header('Location: ../../model/updateStudentEntry.php');
             }
-            header('Location: ../../views/admin/index.php');
          }
       } catch (Exception $e) {
          throw new Exception("");
@@ -140,3 +138,7 @@ class updateDeleteStudentEntry
 }
 
 $execute->update_delete_student_entry($_POST);
+
+//header("Location: ../../model/updateStudentEntry.php");
+header('Location: ../../views/admin/index.php');
+exit;

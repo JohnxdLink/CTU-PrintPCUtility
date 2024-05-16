@@ -17,7 +17,7 @@
     <stdcustomid>3222123</stdcustomid>
     <lastname>Guzman</lastname>
     <firstname>Jhon</firstname>
-    <middlename>C.</middlename>
+    <middlename>Q.</middlename>
     <course>BSIT</course>
     <major>Info-Tech</major>
     <department>COT</department>
@@ -38,10 +38,10 @@
   </entry>
   <entry>
     <student_id>4</student_id>
-    <stdcustomid>124125</stdcustomid>
-    <lastname>TIto</lastname>
-    <firstname>Ralph</firstname>
-    <middlename>T.</middlename>
+    <stdcustomid>3222677</stdcustomid>
+    <lastname>Castro</lastname>
+    <firstname>John</firstname>
+    <middlename>C.</middlename>
     <course>BSIT</course>
     <major>Info-Tech</major>
     <department>COT</department>
@@ -101,11 +101,71 @@
     <stdcustomid>789626</stdcustomid>
     <lastname>Garidan</lastname>
     <firstname>Jamia</firstname>
-    <middlename>W.</middlename>
+    <middlename>C.</middlename>
     <course>BEED</course>
     <major>Filipino</major>
     <department>CEAS</department>
     <device>Computer</device>
     <datetime>2024-05-15 21:35:31</datetime>
+  </entry>
+  <entry>
+    <student_id>10</student_id>
+    <stdcustomid>921312</stdcustomid>
+    <lastname>Argao</lastname>
+    <firstname>Cycero</firstname>
+    <middlename>G.</middlename>
+    <course>BSIE</course>
+    <major/>
+    <department>COE</department>
+    <device>Printer</device>
+    <datetime>2024-05-15 21:54:05</datetime>
+  </entry>
+  <entry>
+    <student_id>11</student_id>
+    <stdcustomid>151212</stdcustomid>
+    <lastname>Lastimosa</lastname>
+    <firstname>Gina</firstname>
+    <middlename>L.</middlename>
+    <course>BIT</course>
+    <major>Drafting</major>
+    <department/>
+    <device>Computer</device>
+    <datetime>2024-05-16 10:47:29</datetime>
+  </entry>
+  <entry>
+    <student_id>12</student_id>
+    <stdcustomid>1513</stdcustomid>
+    <lastname>Bautista</lastname>
+    <firstname>Alfred</firstname>
+    <middlename>O.</middlename>
+    <course>BEED</course>
+    <major>English</major>
+    <department>CEAS</department>
+    <device>Computer</device>
+    <datetime>2024-05-16 10:50:10</datetime>
+  </entry>
+  <entry>
+    <student_id>13</student_id>
+    <stdcustomid>11231</stdcustomid>
+    <lastname>Utsugi</lastname>
+    <firstname>Lenka</firstname>
+    <middlename>R.</middlename>
+    <course>BsCPE</course>
+    <major/>
+    <department>COE</department>
+    <device>Printer</device>
+    <datetime>2024-05-16 10:57:34</datetime>
+  </entry>
+  <entry>
+    <student_id>14</student_id>
+    <stdcustomid>131431</stdcustomid>
+    <lastname>Tomabiao</lastname>
+    <firstname>Ren</firstname>
+    <middlename>W.</middlename>
+    <course>BsCPE</course>
+    <major/>
+    <department>COE</department>
+    <device>Computer And Printer</device>
+    <datetime>2024-05-16 10:59:24</datetime>
   </entry>
 </student>

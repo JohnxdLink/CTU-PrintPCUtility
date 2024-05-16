@@ -1,7 +1,8 @@
 <?php
 
-$execute = new getStudentEntry();
-class getStudentEntry
+$execute = new updateStudentEntry();
+
+class updateStudentEntry
 {
    private $db_conn;
    private $xml_ctrl;
@@ -14,9 +15,8 @@ class getStudentEntry
       $this->xml_ctrl = new xmlCtrl();
    }
 
-   public function insertStudentEntry()
+   public function updateStudentEntry()
    {
-
       try {
          $xml_student = simplexml_load_file('./xml/temp-entry.xml');
 
@@ -28,9 +28,9 @@ class getStudentEntry
          $this->db_conn->connect();
          $connection = $this->db_conn->getConnection();
 
-         // ! Loop through each entry in the XML and store data in the array
          foreach ($xml_student->entry as $entry) {
             $student = [
+               'noid' => (string)$entry->noid,
                'id' => (string)$entry->id,
                'lastname' => (string)$entry->lastname,
                'firstname' => (string)$entry->firstname,
@@ -39,32 +39,28 @@ class getStudentEntry
                'major' => (string)$entry->major,
                'department' => (string)$entry->department,
                'device' => (string)$entry->device,
+               'datetime' => (string)$entry->datetime,
             ];
 
-            $sql_insrt_entry = "INSERT INTO student_info (std_custom_id, l_name, f_name, m_init_name) VALUES ('{$student['id']}', '{$student['lastname']}', '{$student['firstname']}', '{$student['middlename']}');";
+            $sql_update_entry = "UPDATE student_info SET std_custom_id = '{$student['id']}', l_name = '{$student['lastname']}', f_name = '{$student['firstname']}', m_init_name = '{$student['middlename']}' WHERE student_id = '{$student['noid']}';";
 
-            // ! Execute SQL Command
-            if ($connection->query($sql_insrt_entry) === TRUE) {
-               $lastInsertedId = $connection->insert_id;
+            if ($connection->query($sql_update_entry) === TRUE) {
+               $sql_update_school_entry = "UPDATE school SET course = '{$student['course']}', major = '{$student['major']}', department '{$student['department']}' WHERE school_id = '{$student['noid']}';";
 
-               $sql_insrt_school = "INSERT INTO school (fk_student_id, course, major, department) VALUES ($lastInsertedId, '{$student['course']}', '{$student['major']}', '{$student['department']}');";
-
-               if ($connection->query($sql_insrt_school) === TRUE) {
-
-                  $sql_insrt_utility = "INSERT INTO utility (fk_student_id, device, device_date_time) VALUES ($lastInsertedId, '{$student['device']}', NOW());";
-
-                  if ($connection->query($sql_insrt_utility) === TRUE) {
+               if ($connection->query($sql_update_school_entry) === TRUE) {
+                  $sql_update_utility_entry = "UPDATE utility SET device = '{$student['device']}', device_date_time = '{$student['datetime']}' WHERE utility_id = '{$student['noid']}';";
+                  if ($connection->query($sql_update_utility_entry) === TRUE) {
                      $this->selectStudentEntry();
                      header('Location: ../controller/php/xmlCtrl.php');
                      exit;
                   } else {
-                     throw new Exception("Error inserting record utility: " . $connection->error);
+                     throw new Exception("Error update record entry: " . $connection->error);
                   }
                } else {
-                  throw new Exception("Error inserting record school: " . $connection->error);
+                  throw new Exception("Error update record entry: " . $connection->error);
                }
             } else {
-               throw new Exception("Error inserting record entry: " . $connection->error);
+               throw new Exception("Error update record entry: " . $connection->error);
             }
          }
 
@@ -106,4 +102,5 @@ class getStudentEntry
       }
    }
 }
-$execute->insertStudentEntry();
+
+$execute->updateStudentEntry();

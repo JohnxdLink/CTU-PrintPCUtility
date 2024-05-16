@@ -1,7 +1,4 @@
 <?php
-
-use Dotenv\Parser\Entry;
-
 $execute = new xmlCtrl();
 class xmlCtrl
 {
@@ -152,4 +149,4 @@ class xmlCtrl
 }
 
 $execute->removeAllChildNodes(true);
-header("Location: ../../views/admin/index.php");
+header('Location: ../../views/admin/index.php');
