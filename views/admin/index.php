@@ -17,10 +17,9 @@
 
    </header>
    <main class="container-main main">
-
       <section class="main__container sub-sec">
          <!-- Add Form Entries -->
-         <section id="add_entries_content" class="sub-sec__forms sub-form w3-animate-left">
+         <section id="add_entries_content" class="sub-sec__forms sub-form">
             <div class="sub-form__header">
                <h3>Enter Entries</h3>
             </div>
@@ -126,145 +125,15 @@
                               <input type="radio" name="device" id="computerPrint" value="Computer And Printer" required>
                               <label for="">Computer & Printer</label>
                            </div>
-
                         </div>
                      </div>
                   </div>
-
                   <div>
                      <input type="submit" name="submit" id="submit" value="Submit">
                   </div>
                </form>
             </div>
          </section>
-
-         <!-- Update And Delete Entries -->
-         <section id="edit_delete_content" class="sub-sec__forms sub-form--temp-hide w3-animate-right">
-            <?php
-            $xml_selected_entry = simplexml_load_file('../../model/xml/temp-entry.xml');
-            ?>
-
-            <div class="sub-form__header">
-               <div>
-                  <button onclick="open_add_entries()">Back</button>
-               </div>
-               <div>
-                  <h3>Edit Entries</h3>
-               </div>
-            </div>
-            <div class="sub-form__div form-container">
-               <form class="form-container__content" action="../../controller/php/updateDeleteStudentEntry.php" method="post">
-                  <div>
-                     <div>
-                        <input type="text" name="noid" id="noid" placeholder="Enter ID No." value="<?php echo (!empty($xml_selected_entry->entry->noid)) ? $xml_selected_entry->entry->noid : ""; ?>">
-                     </div>
-                     <div>
-                        <input type="submit" name="search" id="search" value="Search">
-                     </div>
-                  </div>
-                  <div>
-                     <div>
-                        <label for="">Student ID:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="customid" id="customid" value="<?php echo (!empty($xml_selected_entry->entry->id)) ? $xml_selected_entry->entry->id : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Lastname:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="lastname" id="lastname" value="<?php echo (!empty($xml_selected_entry->entry->lastname)) ? $xml_selected_entry->entry->lastname : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Firstname:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="firstname" id="firstname" value="<?php echo (!empty($xml_selected_entry->entry->firstname)) ? $xml_selected_entry->entry->firstname : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Middle Initial:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="middlename" id="middlename" value="<?php echo (!empty($xml_selected_entry->entry->middlename)) ? $xml_selected_entry->entry->middlename : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Course:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="course" id="course" value="<?php echo (!empty($xml_selected_entry->entry->course)) ? $xml_selected_entry->entry->course : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Major:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="major" id="major" value="<?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Department:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="department" id="department" value="<?php echo (!empty($xml_selected_entry->entry->department)) ? $xml_selected_entry->entry->department : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Device Used:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="device" id="device" value="<?php echo (!empty($xml_selected_entry->entry->device)) ? $xml_selected_entry->entry->device : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <label for="">Date & TImelog:</label>
-                     </div>
-                     <div>
-                        <input type="text" name="datetime" id="datetime" value="<?php echo (!empty($xml_selected_entry->entry->datetime)) ? $xml_selected_entry->entry->datetime : ""; ?>">
-                     </div>
-                  </div>
-
-                  <div>
-                     <div>
-                        <input type="submit" name="update" id="update" value="Update">
-                     </div>
-                     <div>
-                        <input type="submit" name="delete" id="delete" value="Delete">
-                     </div>
-                  </div>
-               </form>
-            </div>
-         </section>
-
-         <nav class="sub-sec__nav">
-            <div>
-               <button onclick="open_update_entries()">Edit</button>
-            </div>
-            <div>
-               <form action="">
-                  <input type="submit" name="" id="" onclick="refresh()" value="Refresh">
-               </form>
-            </div>
-         </nav>
       </section>
 
       <section class="main-table-seciton table-sec">
@@ -323,7 +192,7 @@
                      <h1>00</h1>
                   </div>
                   <div>
-                     <h4>CEAS</h4>
+                     <h4>CME</h4>
                   </div>
                </div>
             </div>
@@ -356,8 +225,119 @@
                </div>
             </div>
          </div>
-         <div class="table-sec__update-delete-container">
 
+         <div class="table-sec__update-delete-container update-delete">
+            <?php
+            $xml_selected_entry = simplexml_load_file('../../model/xml/temp-entry.xml');
+            ?>
+            <form class="update-delete__container upt-dlte-sec" action="../../controller/php/updateDeleteStudentEntry.php" method="post">
+               <section class="upt-dlte-sec">
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <input type="text" name="noid" id="noid" placeholder="Enter ID No." value="<?php echo (!empty($xml_selected_entry->entry->noid)) ? $xml_selected_entry->entry->noid : ""; ?>">
+                     </div>
+                     <div>
+                        <input type="submit" name="search" id="search" value="Search">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/id.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="customid" id="customid" value="<?php echo (!empty($xml_selected_entry->entry->id)) ? $xml_selected_entry->entry->id : ""; ?>">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/user.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="lastname" id="lastname" value="<?php echo (!empty($xml_selected_entry->entry->lastname)) ? $xml_selected_entry->entry->lastname : ""; ?>">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/user.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="firstname" id="firstname" value="<?php echo (!empty($xml_selected_entry->entry->firstname)) ? $xml_selected_entry->entry->firstname : ""; ?>">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/user.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="middlename" id="middlename" value="<?php echo (!empty($xml_selected_entry->entry->middlename)) ? $xml_selected_entry->entry->middlename : ""; ?>">
+                     </div>
+                  </div>
+               </section>
+
+               <section class="upt-dlte-sec">
+                  <div class="upt-dlte-sec--sub-form" style="margin-top: 27px;">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/course.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="course" id="course" value="<?php echo (!empty($xml_selected_entry->entry->course)) ? $xml_selected_entry->entry->course : ""; ?>">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/major.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="major" id="major" value="<?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/department.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="department" id="department" value="<?php echo (!empty($xml_selected_entry->entry->department)) ? $xml_selected_entry->entry->department : ""; ?>">
+                     </div>
+                  </div>
+               </section>
+
+               <section class="upt-dlte-sec">
+                  <div class="upt-dlte-sec--sub-form" style="margin-top: 27px;">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/device.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="device" id="device" value="<?php echo (!empty($xml_selected_entry->entry->device)) ? $xml_selected_entry->entry->device : ""; ?>">
+                     </div>
+                  </div>
+
+                  <div class="upt-dlte-sec--sub-form">
+                     <div>
+                        <img class="form__image--modify" src="../public/images/icons/datetime.png" alt="">
+                     </div>
+                     <div>
+                        <input type="text" name="datetime" id="datetime" value="<?php echo (!empty($xml_selected_entry->entry->datetime)) ? $xml_selected_entry->entry->datetime : ""; ?>">
+                     </div>
+                  </div>
+               </section>
+
+               <section class="upt-dlte-sec">
+                  <div style="margin-top: 27px;">
+                     <div>
+                        <input type="submit" name="update" id="update" value="Update">
+                     </div>
+                     <div>
+                        <input type="submit" name="delete" id="delete" value="Delete">
+                     </div>
+                  </div>
+               </section>
+            </form>
          </div>
          <?php
          $xml_student_entry = simplexml_load_file('../../model/xml/temp-select-entry.xml');

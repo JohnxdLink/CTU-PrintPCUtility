@@ -46,7 +46,7 @@ section.main__container {
 }
 
 section.sub-sec__forms {
-   height: 90%;
+   height: 100%;
    display: flex;
    flex-direction: column;
 }
@@ -54,17 +54,6 @@ section.sub-sec__forms {
 div.sub-form__header {
    display: flex;
    align-items: center;
-}
-
-section.sub-form--temp-hide {
-   display: none;
-}
-
-nav.sub-sec__nav {
-   height: 10%;
-   display: flex;
-   flex-direction: row;
-   gap: 10px;
 }
 
 section.main-table-seciton {
@@ -121,16 +110,45 @@ img.cnt-entry--dept-image-min-size {
    height: 35px;
 }
 
+
+/* ! Update Deleete */
 div.table-sec__update-delete-container {
    width: 100%;
-   height: 25%;
+   height: 30%;
    padding: 10px;
 }
 
+form.update-delete__container {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   gap: 30px;
+}
 
+section.upt-dlte-sec {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+div.upt-dlte-sec--sub-form {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 3px;
+   padding: 1px 0px 1px 0px;
+}
+
+img.form__image--modify {
+   width: 25px;
+   height: 25px;
+}
+
+/* ! End of Update Delete */
 div.table-sec__container {
    width: 100%;
-   height: 55%;
+   height: 50%;
    padding: 10px;
    background-color: #dbb356;
    overflow-y: auto;
