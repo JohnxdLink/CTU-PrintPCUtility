@@ -39,17 +39,19 @@ class updateStudentEntry
                'major' => (string)$entry->major,
                'department' => (string)$entry->department,
                'device' => (string)$entry->device,
-               'datetime' => (string)$entry->datetime,
+               'datetime' => (string)$entry->datetime
             ];
 
             $sql_update_entry = "UPDATE student_info SET std_custom_id = '{$student['id']}', l_name = '{$student['lastname']}', f_name = '{$student['firstname']}', m_init_name = '{$student['middlename']}' WHERE student_id = '{$student['noid']}';";
 
             if ($connection->query($sql_update_entry) === TRUE) {
-               $sql_update_school_entry = "UPDATE school SET course = '{$student['course']}', major = '{$student['major']}', department '{$student['department']}' WHERE school_id = '{$student['noid']}';";
+               $sql_update_school_entry = "UPDATE school SET course = '{$student['course']}', major = '{$student['major']}', department = '{$student['department']}' WHERE fk_student_id = '{$student['noid']}';";
 
                if ($connection->query($sql_update_school_entry) === TRUE) {
-                  $sql_update_utility_entry = "UPDATE utility SET device = '{$student['device']}', device_date_time = '{$student['datetime']}' WHERE utility_id = '{$student['noid']}';";
+                  $sql_update_utility_entry = "UPDATE utility SET device = '{$student['device']}', device_date_time = '{$student['datetime']}' WHERE fk_student_id = '{$student['noid']}';";
                   if ($connection->query($sql_update_utility_entry) === TRUE) {
+
+                     $this->xml_ctrl->removeOldSelectEntry();
                      $this->selectStudentEntry();
                      header('Location: ../controller/php/xmlCtrl.php');
                      exit;

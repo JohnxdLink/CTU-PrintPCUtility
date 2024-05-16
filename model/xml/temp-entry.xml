@@ -1,15 +1,4 @@
 <?xml version="1.0"?>
 <student>
-  <entry>
-    <noid>14</noid>
-    <id>131431</id>
-    <lastname>Tomabiao</lastname>
-    <firstname>Rena</firstname>
-    <middlename>W.</middlename>
-    <course>BsCPE</course>
-    <major/>
-    <department>COE</department>
-    <device>Computer And Printer</device>
-    <datetime>2024-05-16 10:59:24</datetime>
-  </entry>
+  
 </student>

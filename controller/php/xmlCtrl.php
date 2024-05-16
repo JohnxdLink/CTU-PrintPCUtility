@@ -117,6 +117,28 @@ class xmlCtrl
       }
    }
 
+   public function removeOldSelectEntry()
+   {
+      try {
+         if (file_exists($this->xmlSelectEntryPath)) {
+            $formatDom = new DOMDocument();
+            $formatDom->load($this->xmlSelectEntryPath);
+            $xmlPath = new DOMXPath($formatDom);
+
+            $entries = $xmlPath->query('//entry');
+            foreach ($entries as $entry) {
+               $entry->parentNode->removeChild($entry);
+            }
+
+            $formatDom->save($this->xmlSelectEntryPath);
+         } else {
+            throw new Exception("XML file not found: $this->xmlSelectEntryPath");
+         }
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
+   }
+
    private function saveXML($xmlStudent)
    {
       try {

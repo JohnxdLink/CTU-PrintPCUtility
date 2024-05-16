@@ -4,12 +4,12 @@
     <student_id>1</student_id>
     <stdcustomid>3222677</stdcustomid>
     <lastname>Castro</lastname>
-    <firstname>John</firstname>
+    <firstname>John Christian</firstname>
     <middlename>C.</middlename>
     <course>BSIT</course>
     <major>Info-Tech</major>
     <department>COT</department>
-    <device/>
+    <device>Computer</device>
     <datetime>2024-05-13 21:21:44</datetime>
   </entry>
   <entry>
@@ -53,7 +53,7 @@
     <stdcustomid>12561</stdcustomid>
     <lastname>Oljol</lastname>
     <firstname>Raina</firstname>
-    <middlename>C.</middlename>
+    <middlename>E.</middlename>
     <course>BSCS</course>
     <major>Data Minng</major>
     <department>COT</department>
@@ -79,7 +79,7 @@
     <firstname>Artix</firstname>
     <middlename>R.</middlename>
     <course>BSCS</course>
-    <major>BA</major>
+    <major>BM</major>
     <department>COT</department>
     <device>Printer</device>
     <datetime>2024-05-15 10:24:09</datetime>
@@ -139,7 +139,7 @@
     <firstname>Alfred</firstname>
     <middlename>O.</middlename>
     <course>BEED</course>
-    <major>English</major>
+    <major>Filipino</major>
     <department>CEAS</department>
     <device>Computer</device>
     <datetime>2024-05-16 10:50:10</datetime>
@@ -160,12 +160,36 @@
     <student_id>14</student_id>
     <stdcustomid>131431</stdcustomid>
     <lastname>Tomabiao</lastname>
-    <firstname>Ren</firstname>
+    <firstname>Rena</firstname>
     <middlename>W.</middlename>
     <course>BsCPE</course>
     <major/>
     <department>COE</department>
     <device>Computer And Printer</device>
     <datetime>2024-05-16 10:59:24</datetime>
+  </entry>
+  <entry>
+    <student_id>15</student_id>
+    <stdcustomid>12316</stdcustomid>
+    <lastname>Widow</lastname>
+    <firstname>Elena</firstname>
+    <middlename>T.</middlename>
+    <course>BSME</course>
+    <major/>
+    <department>COE</department>
+    <device>Computer</device>
+    <datetime>2024-05-16 13:06:31</datetime>
+  </entry>
+  <entry>
+    <student_id>16</student_id>
+    <stdcustomid>124166</stdcustomid>
+    <lastname>Widow</lastname>
+    <firstname>Natasha</firstname>
+    <middlename>P.</middlename>
+    <course>BEED</course>
+    <major>Science</major>
+    <department>COE</department>
+    <device>Computer</device>
+    <datetime>2024-05-16 13:07:24</datetime>
   </entry>
 </student>

@@ -50,53 +50,6 @@ CREATE TABLE
       FOREIGN KEY (fk_student_id) REFERENCES student_info (student_id)
    );
 
-INSERT INTO
-   student_info (std_custom_id, l_name, f_name, m_init_name)
-VALUES
-   (1001, 'Smith', 'John', 'A'),
-   (1002, 'Doe', 'Jane', 'B'),
-   (1003, 'Johnson', 'Michael', 'C'),
-   (1004, 'Williams', 'Emily', 'D'),
-   (1005, 'Brown', 'Christopher', 'E');
-
-INSERT INTO
-   school (fk_student_id, course, major, department)
-VALUES
-   (
-      1,
-      'Computer Science',
-      'Software Engineering',
-      'Engineering'
-   ),
-   (
-      2,
-      'Business Administration',
-      'Marketing',
-      'Business'
-   ),
-   (3, 'Biology', 'Genetics', 'Science'),
-   (
-      4,
-      'Psychology',
-      'Clinical Psychology',
-      'Social Science'
-   ),
-   (
-      5,
-      'Mechanical Engineering',
-      'Thermal Engineering',
-      'Engineering'
-   );
-
-INSERT INTO
-   utility (fk_student_id, device, device_date_time)
-VALUES
-   (1, 'Laptop', '2024-05-13 09:00:00'),
-   (2, 'Smartphone', '2024-05-13 10:30:00'),
-   (3, 'Tablet', '2024-05-13 11:45:00'),
-   (4, 'Desktop', '2024-05-13 13:15:00'),
-   (5, 'Smartwatch', '2024-05-13 14:30:00');
-
 -- ! SELECT JOIN
 SELECT
    si.student_id,
