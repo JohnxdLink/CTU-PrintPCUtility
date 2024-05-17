@@ -37,7 +37,7 @@
                </div>
             </div>
 
-            <form class="login-form__container fr-element" action="">
+            <form class="login-form__container fr-element" action="../../controller/php/loginValidation.php" method="post">
                <div>
                   <div>
                      <label class="fr-element__lbl" for="">Username:</label>
@@ -51,7 +51,7 @@
                      <label class="fr-element__lbl" for="">Password:</label>
                   </div>
                   <div>
-                     <input class="fr-element__input" type="text" name="passord" id="password" placeholder="Password">
+                     <input class="fr-element__input" type="text" name="password" id="password" placeholder="Password">
                   </div>
                </div>
                <div>
