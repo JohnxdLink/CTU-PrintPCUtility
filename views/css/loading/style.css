@@ -1,0 +1,36 @@
+div.loader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: rgb(255, 255, 255);
+   transition: visibility 5s;
+}
+
+div.loader--hidden {
+   visibility: hidden;
+}
+
+div.loader::after {
+   content: "";
+   width: 75px;
+   height: 75px;
+   border: 15px solid #fad98c;
+   border-top-color: #dbb356;
+   border-radius: 50%;
+   animation: loading 0.5s ease infinite;
+}
+
+@keyframes loading {
+   from {
+      transform: rotate(0turn);
+   }
+
+   to {
+      transform: rotate(1turn);
+   }
+}

@@ -48,10 +48,14 @@ class loginValidation
                $password = $postData['password'];
 
                if ($username == $this->db_admin_account->get_adminUsername() && $password == $this->db_admin_account->get_adminPassword()) {
+                  echo '<script type="text/javascript">';
+                  echo 'alert("Login successfully!");';
+                  echo 'window.location.href = "../../views/loading/index.php";';
+                  echo '</script>';
                } else {
                   echo '<script type="text/javascript">';
                   echo 'alert("No existed account in database.");';
-                  echo 'window.location.href = "../../views/login/index.php";';
+                  echo 'window.location.href = "../../views/admin/index.php";';
                   echo '</script>';
                }
             }

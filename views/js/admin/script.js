@@ -1,13 +1,15 @@
-function open_update_entries() {
-  document.getElementById("edit_delete_content").style.display = "flex";
-  document.getElementById("add_entries_content").style.display = "none";
-}
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
 
-function open_add_entries() {
-  document.getElementById("add_entries_content").style.display = "flex";
-  document.getElementById("edit_delete_content").style.display = "none";
-}
+  // Add the class to hide the loader
+  loader.classList.add("loader--hidden");
 
-function refresh() {
-  location.reload();
-}
+  // Listen for the transition end event
+  loader.addEventListener("transitionend", () => {
+    // Remove the loader from the DOM
+    document.body.removeChild(loader);
+
+    // Redirect to the desired page
+    window.location.href = "../admin/index.php";
+  });
+});
