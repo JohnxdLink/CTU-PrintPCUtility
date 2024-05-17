@@ -250,10 +250,10 @@
                <section class="upt-dlte-sec">
                   <div class="upt-dlte-sec--sub-form">
                      <div>
-                        <input type="text" name="noid" id="noid" placeholder="Enter ID No." value="<?php echo (!empty($xml_selected_entry->entry->noid)) ? $xml_selected_entry->entry->noid : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="noid" id="noid" placeholder="Enter ID No." value="<?php echo (!empty($xml_selected_entry->entry->noid)) ? $xml_selected_entry->entry->noid : ""; ?>">
                      </div>
                      <div>
-                        <input type="submit" name="search" id="search" value="Search">
+                        <input class="fr-element__btn--search" type="submit" name="search" id="search" value="Search">
                      </div>
                   </div>
 
@@ -262,7 +262,7 @@
                         <img class="form__image--modify" src="../public/images/icons/id.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="customid" id="customid" value="<?php echo (!empty($xml_selected_entry->entry->id)) ? $xml_selected_entry->entry->id : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="customid" id="customid" value="<?php echo (!empty($xml_selected_entry->entry->id)) ? $xml_selected_entry->entry->id : ""; ?>">
                      </div>
                   </div>
 
@@ -271,7 +271,7 @@
                         <img class="form__image--modify" src="../public/images/icons/user.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="lastname" id="lastname" value="<?php echo (!empty($xml_selected_entry->entry->lastname)) ? $xml_selected_entry->entry->lastname : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="lastname" id="lastname" value="<?php echo (!empty($xml_selected_entry->entry->lastname)) ? $xml_selected_entry->entry->lastname : ""; ?>">
                      </div>
                   </div>
 
@@ -280,7 +280,7 @@
                         <img class="form__image--modify" src="../public/images/icons/user.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="firstname" id="firstname" value="<?php echo (!empty($xml_selected_entry->entry->firstname)) ? $xml_selected_entry->entry->firstname : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="firstname" id="firstname" value="<?php echo (!empty($xml_selected_entry->entry->firstname)) ? $xml_selected_entry->entry->firstname : ""; ?>">
                      </div>
                   </div>
 
@@ -289,18 +289,18 @@
                         <img class="form__image--modify" src="../public/images/icons/user.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="middlename" id="middlename" value="<?php echo (!empty($xml_selected_entry->entry->middlename)) ? $xml_selected_entry->entry->middlename : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="middlename" id="middlename" value="<?php echo (!empty($xml_selected_entry->entry->middlename)) ? $xml_selected_entry->entry->middlename : ""; ?>">
                      </div>
                   </div>
                </section>
 
                <section class="upt-dlte-sec">
-                  <div class="upt-dlte-sec--sub-form" style="margin-top: 27px;">
+                  <div class="upt-dlte-sec--sub-form" style="margin-top: 37px;">
                      <div>
                         <img class="form__image--modify" src="../public/images/icons/course.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="course" id="course" value="<?php echo (!empty($xml_selected_entry->entry->course)) ? $xml_selected_entry->entry->course : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="course" id="course" value="<?php echo (!empty($xml_selected_entry->entry->course)) ? $xml_selected_entry->entry->course : ""; ?>">
                      </div>
                   </div>
 
@@ -309,7 +309,7 @@
                         <img class="form__image--modify" src="../public/images/icons/major.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="major" id="major" value="<?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="major" id="major" value="<?php echo (!empty($xml_selected_entry->entry->major)) ? $xml_selected_entry->entry->major : ""; ?>">
                      </div>
                   </div>
 
@@ -318,18 +318,18 @@
                         <img class="form__image--modify" src="../public/images/icons/department.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="department" id="department" value="<?php echo (!empty($xml_selected_entry->entry->department)) ? $xml_selected_entry->entry->department : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="department" id="department" value="<?php echo (!empty($xml_selected_entry->entry->department)) ? $xml_selected_entry->entry->department : ""; ?>">
                      </div>
                   </div>
                </section>
 
                <section class="upt-dlte-sec">
-                  <div class="upt-dlte-sec--sub-form" style="margin-top: 27px;">
+                  <div class="upt-dlte-sec--sub-form" style="margin-top: 37px;">
                      <div>
                         <img class="form__image--modify" src="../public/images/icons/device.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="device" id="device" value="<?php echo (!empty($xml_selected_entry->entry->device)) ? $xml_selected_entry->entry->device : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="device" id="device" value="<?php echo (!empty($xml_selected_entry->entry->device)) ? $xml_selected_entry->entry->device : ""; ?>">
                      </div>
                   </div>
 
@@ -338,18 +338,18 @@
                         <img class="form__image--modify" src="../public/images/icons/datetime.png" alt="">
                      </div>
                      <div>
-                        <input type="text" name="datetime" id="datetime" value="<?php echo (!empty($xml_selected_entry->entry->datetime)) ? $xml_selected_entry->entry->datetime : ""; ?>">
+                        <input class="fr-element__input fr-elmnt--border" type="text" name="datetime" id="datetime" value="<?php echo (!empty($xml_selected_entry->entry->datetime)) ? $xml_selected_entry->entry->datetime : ""; ?>">
                      </div>
                   </div>
                </section>
 
                <section class="upt-dlte-sec">
-                  <div style="margin-top: 27px;">
+                  <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 37px;">
                      <div>
-                        <input type="submit" name="update" id="update" value="Update">
+                        <input class="fr-element__btn--update" type="submit" name="update" id="update" value="Update">
                      </div>
                      <div>
-                        <input type="submit" name="delete" id="delete" value="Delete">
+                        <input class="fr-element__btn--delete" type="submit" name="delete" id="delete" value="Delete">
                      </div>
                   </div>
                </section>

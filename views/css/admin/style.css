@@ -17,6 +17,11 @@ body.whole-container {
    height: 100vh;
    display: flex;
    flex-direction: column;
+   overflow: overlay;
+}
+
+::-webkit-scrollbar {
+   background-color: transparent;
 }
 
 div.body-sec__background::before {
@@ -200,7 +205,9 @@ div.table-sec__count-entries-container--flex-column {
 div.cnt-entry--other {
    padding: 3px;
    border-radius: 5px;
-   background-color: #dbb356;
+   background-color: #f4d281;
+   border-left: 2px solid #28225f;
+   border-top: 2px solid #28225f;
 }
 
 div.cnt-entry__container {
@@ -213,7 +220,9 @@ div.cnt-entry__container {
 
 div.dept-entry-con--color {
    padding: 5px;
-   background-color: #dbb356;
+   background-color: #f4d281;
+   border-right: 2px solid #28225f;
+   border-bottom: 2px solid #28225f;
    border-radius: 5px;
 }
 
@@ -233,7 +242,7 @@ div.table-sec__update-delete-container {
    width: 100%;
    height: 30%;
    padding: 10px;
-   background-color: #dbb356;
+   background-color: #ffd771;
    border-radius: 10px;
 }
 
@@ -242,10 +251,11 @@ form.update-delete__container {
    height: 100%;
    display: flex;
    flex-direction: row;
-   gap: 30px;
+   gap: 20px;
 }
 
 section.upt-dlte-sec {
+   width: 25%;
    display: flex;
    flex-direction: column;
    gap: 5px;
@@ -255,7 +265,7 @@ div.upt-dlte-sec--sub-form {
    display: flex;
    flex-direction: row;
    align-items: center;
-   gap: 3px;
+   gap: 7px;
    padding: 1px 0px 1px 0px;
 }
 
@@ -264,11 +274,64 @@ img.form__image--modify {
    height: 25px;
 }
 
+input.fr-element__btn--search {
+   border: none;
+   padding: 7px 20px;
+   font-size: 0.70rem;
+   color: #fdfbf9;
+   background-color: #28225f;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+input.fr-element__btn--search:hover {
+   background-color: #4131cf;
+}
+
+input.fr-element__btn--update {
+   width: 100%;
+   border: none;
+   padding: 7px 20px;
+   font-size: 0.70rem;
+   color: #fdfbf9;
+   background-color: #005300;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+input.fr-element__btn--update:hover {
+   background-color: #17bd17;
+}
+
+input.fr-element__btn--delete {
+   width: 100%;
+   border: none;
+   padding: 7px 20px;
+   font-size: 0.70rem;
+   color: #fdfbf9;
+   background-color: #e00000;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+input.fr-element__btn--delete:hover {
+   background-color: #ff3838;
+}
+
+input.fr-elmnt--border {
+   width: 205px;
+   border-bottom: 2px solid #28225f;
+   border-right: 3px solid #28225f;
+}
+
 /* ! End of Update Delete */
 div.table-sec__container {
    width: 100%;
    height: 50%;
-   padding: 10px 10px 0px 0px;
+   padding: 10px 0px 0px 0px;
    overflow-y: auto;
 }
 
