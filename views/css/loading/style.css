@@ -7,8 +7,14 @@ div.loader {
    display: flex;
    align-items: center;
    justify-content: center;
-   background: rgb(255, 255, 255);
+   background-color: transparent;
    transition: visibility 5s;
+}
+
+img.img__logo {
+   position: absolute;
+   width: 160px;
+   height: 160px;
 }
 
 div.loader--hidden {
@@ -17,12 +23,12 @@ div.loader--hidden {
 
 div.loader::after {
    content: "";
-   width: 75px;
-   height: 75px;
+   width: 150px;
+   height: 150px;
    border: 15px solid #fad98c;
    border-top-color: #dbb356;
    border-radius: 50%;
-   animation: loading 0.5s ease infinite;
+   animation: loading 0.3s ease infinite;
 }
 
 @keyframes loading {

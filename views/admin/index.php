@@ -9,6 +9,7 @@
    <meta name="robots" content="follow">
    <meta name="author" content="Castro John Christian">
    <link rel="stylesheet" href="../css/admin/style.css">
+   <link rel="shortcut icon" type="image/x-icon" href="../public/images/logo/castro-techno-logo.png">
    <title>PPU | Admin</title>
 </head>
 

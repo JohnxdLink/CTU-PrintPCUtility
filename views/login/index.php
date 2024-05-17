@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../css/login/style.css">
+   <link rel="shortcut icon" type="image/x-icon" href="../public/images/logo/castro-techno-logo.png">
    <meta name="language" content="English">
    <meta name="description" content="This is the login page of PPU">
    <meta name="robots" content="follow">
