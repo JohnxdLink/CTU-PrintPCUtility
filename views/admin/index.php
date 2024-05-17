@@ -39,64 +39,64 @@
             </div>
 
             <div class="sub-form__div form-container">
-               <form class="form-container__content" action="../../controller/php/addStudentEntry.php" method="post" target="_self">
+               <form class="form-container__content fr-element" action="../../controller/php/addStudentEntry.php" method="post" target="_self">
                   <!-- Student ID -->
                   <div>
                      <div>
-                        <label for="studentId">Student ID:</label>
+                        <label class="fr-element__lbl" for="studentId">Student ID:</label>
                      </div>
                      <div>
-                        <input type="text" name="studentId" id="studentId" placeholder="Enter Student ID" required>
+                        <input class="fr-element__input" type="text" name="studentId" id="studentId" placeholder="Enter Student ID" required>
                      </div>
                   </div>
 
                   <!-- lastname -->
                   <div>
                      <div>
-                        <label for="">Lastname:</label>
+                        <label class="fr-element__lbl" for="">Lastname:</label>
                      </div>
                      <div>
-                        <input type="text" name="lname" id="lname" placeholder="Enter Lastname" required>
+                        <input class="fr-element__input" type="text" name="lname" id="lname" placeholder="Enter Lastname" required>
                      </div>
                   </div>
 
                   <!-- firstname -->
                   <div>
                      <div>
-                        <label for="">First Name:</label>
+                        <label class="fr-element__lbl" for="">First Name:</label>
                      </div>
                      <div>
-                        <input type="text" name="fname" id="fname" placeholder="Enter Firstname" required>
+                        <input class="fr-element__input" type="text" name="fname" id="fname" placeholder="Enter Firstname" required>
                      </div>
                   </div>
 
                   <!-- Middle Init -->
                   <div>
                      <div>
-                        <label for="">Middle Initial:</label>
+                        <label class="fr-element__lbl" for="">Middle Initial:</label>
                      </div>
                      <div>
-                        <input type="text" name="middleInit" id="middleInit" placeholder="Enter Middle Initial">
+                        <input class="fr-element__input" type="text" name="middleInit" id="middleInit" placeholder="Enter Middle Initial">
                      </div>
                   </div>
 
                   <!-- Course -->
                   <div>
                      <div>
-                        <label for="">Course:</label>
+                        <label class="fr-element__lbl" for="">Course:</label>
                      </div>
                      <div>
-                        <input type="text" name="course" id="course" placeholder="Enter Course Ex: BSIT" required>
+                        <input class="fr-element__input" type="text" name="course" id="course" placeholder="Enter Course Ex: BSIT" required>
                      </div>
                   </div>
 
                   <!-- Major -->
                   <div>
                      <div>
-                        <label for="">Major:</label>
+                        <label class="fr-element__lbl" for="">Major:</label>
                      </div>
                      <div>
-                        <input type="text" name="major" id="major" placeholder="Enter Major">
+                        <input class="fr-element__input" type="text" name="major" id="major" placeholder="Enter Major">
                      </div>
                   </div>
 
@@ -104,10 +104,10 @@
                   <div>
                      <div>
                         <div>
-                           <label for="">Department:</label>
+                           <label class="fr-element__lbl" for="">Department:</label>
                         </div>
                         <div>
-                           <select name="department" id="department" required>
+                           <select class="fr-element__slct" name="department" id="department" required>
                               <option value="">Select what department</option>
                               <option value="COT">College Of Technology</option>
                               <option value="COE">College Of Engineering</option>
@@ -122,28 +122,28 @@
                   <div>
                      <div>
                         <div>
-                           <label for="">Device Used:</label>
+                           <label class="fr-element__lbl" for="">Select Device Used:</label>
                         </div>
                         <div>
-                           <div>
+                           <div class="fr-element__lbl--div">
                               <input type="radio" name="device" id="computer" value="Computer" required>
-                              <label for="">Computer</label>
+                              <label class="fr-element__lbl--radio" for="">Computer</label>
                            </div>
 
-                           <div>
+                           <div class="fr-element__lbl--div">
                               <input type="radio" name="device" id="printer" value="Printer" required>
-                              <label for="">Printer</label>
+                              <label class="fr-element__lbl--radio" for="">Printer</label>
                            </div>
 
-                           <div>
+                           <div class="fr-element__lbl--div">
                               <input type="radio" name="device" id="computerPrint" value="Computer And Printer" required>
-                              <label for="">Computer & Printer</label>
+                              <label class="fr-element__lbl--radio" for="">Computer & Printer</label>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div>
-                     <input type="submit" name="submit" id="submit" value="Submit">
+                     <input class="fr-element__btn--submit" type="submit" name="submit" id="submit" value="Submit">
                   </div>
                </form>
             </div>
