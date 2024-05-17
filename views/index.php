@@ -1,3 +1,3 @@
 <?php
-header("Location: admin/index.php");
+header("Location: login/index.php");
 exit;

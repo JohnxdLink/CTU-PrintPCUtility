@@ -9,7 +9,7 @@
    <meta name="description" content="This is the login page of PPU">
    <meta name="robots" content="follow">
    <meta name="author" content="Castro John Christian">
-   <title>Document</title>
+   <title>CTU | Login</title>
 </head>
 
 <body class="whole-container body-sec">
@@ -27,33 +27,36 @@
                   <img class="header__logo--edit" src="../public/images/logo/castro-techno-logo.png" alt="">
                </div>
 
-               <div class="login-form__header-text">
+               <div class="login-form__header-text hdr-texts">
                   <div>
-                     <h3>**** Technological University</h3>
+                     <h4 class="hdr-texts--ctu">Castro Technological University</h4>
                   </div>
                   <div>
-                     <h5>Danao Campus</h5>
+                     <h4 class="hdr-texts--location">Compostela Campus, Cebu</h4>
                   </div>
                </div>
             </div>
 
-            <form class="login-form__container" action="">
+            <form class="login-form__container fr-element" action="">
                <div>
-                  <label for="">Username</label>
+                  <div>
+                     <label class="fr-element__lbl" for="">Username:</label>
+                  </div>
+                  <div>
+                     <input class="fr-element__input" type="text" name="username" id="username" placeholder="Username">
+                  </div>
                </div>
                <div>
-                  <input type="text" name="username" id="username" placeholder="Username">
+                  <div>
+                     <label class="fr-element__lbl" for="">Password:</label>
+                  </div>
+                  <div>
+                     <input class="fr-element__input" type="text" name="passord" id="password" placeholder="Password">
+                  </div>
                </div>
                <div>
-                  <label for="">Password</label>
+                  <input class="fr-element__input fr-elmnt--btn" type="submit" name="submit" id="submit" value="Login">
                </div>
-               <div>
-                  <input type="text" name="passord" id="password" placeholder="Password">
-               </div>
-
-               <dir>
-                  <input type="submit" name="submit" id="submit" value="Login">
-               </dir>
             </form>
          </div>
       </section>
