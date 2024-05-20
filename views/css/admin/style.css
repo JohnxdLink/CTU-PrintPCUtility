@@ -63,6 +63,23 @@ img.header__mylogo--modify {
    height: 40px;
 }
 
+input.refresh__btn {
+   padding: 7px 14px;
+   border-radius: 5px;
+   border-top: none;
+   background-color: #28225f;
+   color: #dbb356;
+   border-right: 2px solid #e1b142;
+   border-bottom: 2px solid #e1b142;
+   border-left: none;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+input.refresh__btn:hover {
+   background-color: #4131cf;
+}
+
 /* ! End of header */
 main.container-main {
    width: 100%;

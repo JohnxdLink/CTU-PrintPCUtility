@@ -30,9 +30,9 @@
          </div>
       </div>
 
-      <form class="header-refresh__count" action="../../controller/php/refreshCountEntry.php" method="post">
+      <form class="header-refresh__count refresh" action="../../controller/php/refreshCountEntry.php" method="post">
          <div>
-            <input type="submit" name="refresh" id="refresh" value="Refresh">
+            <input class="refresh__btn" type="submit" name="refresh" id="refresh" value="Refresh">
          </div>
       </form>
    </header>
