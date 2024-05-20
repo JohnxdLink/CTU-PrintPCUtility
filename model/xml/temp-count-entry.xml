@@ -1,4 +1,11 @@
 <?xml version="1.0"?>
 <student>
-
+  <entry>
+    <overall>1</overall>
+    <todayEntries>1</todayEntries>
+    <ceas>0</ceas>
+    <cme>0</cme>
+    <coe>0</coe>
+    <cot>1</cot>
+  </entry>
 </student>

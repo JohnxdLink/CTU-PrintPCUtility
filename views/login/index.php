@@ -52,7 +52,7 @@
                      <label class="fr-element__lbl" for="">Password:</label>
                   </div>
                   <div>
-                     <input class="fr-element__input" type="text" name="password" id="password" placeholder="Password">
+                     <input class="fr-element__input" type="password" name="password" id="password" placeholder="Password">
                   </div>
                </div>
                <div>

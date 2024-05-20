@@ -1,4 +1,15 @@
 <?xml version="1.0"?>
 <student>
-
+  <entry>
+    <student_id>1</student_id>
+    <stdcustomid>3222677</stdcustomid>
+    <lastname>Castro</lastname>
+    <firstname>John Christian</firstname>
+    <middlename>C.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-20 22:45:04</datetime>
+  </entry>
 </student>
