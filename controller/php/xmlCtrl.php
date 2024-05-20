@@ -95,16 +95,12 @@ class xmlCtrl
 
    public function countEntry($overall, $todayEntries, $ceas, $cme, $coe, $cot)
    {
+      $this->removeOldCountEntries(true);
+
       try {
          $xmlcountEntry = simplexml_load_file($this->xmlCountEntryPath);
          if ($xmlcountEntry === false) {
             throw new Exception("Failed to load XML file: $this->xmlCountEntryPath");
-         }
-
-         foreach ($xmlcountEntry->entry as $entry) {
-            if ((string)$entry->overall === $overall && (string)$entry->$todayEntries === $todayEntries && (string)$entry->$ceas === $ceas && (string)$entry->cme === $cme && $entry->coe === $coe && (string)$entry->cot === $cot) {
-               return;
-            }
          }
 
          $xmlEntry = $xmlcountEntry->addChild('entry');
@@ -161,6 +157,30 @@ class xmlCtrl
             $formatDom->save($this->xmlSelectEntryPath);
          } else {
             throw new Exception("XML file not found: $this->xmlSelectEntryPath");
+         }
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
+   }
+
+   public function removeOldCountEntries($removeAll = false)
+   {
+      try {
+         if (file_exists($this->xmlCountEntryPath)) {
+            $formatDom = new DOMDocument();
+            $formatDom->load($this->xmlCountEntryPath);
+            $xmlPath = new DOMXPath($formatDom);
+
+            if ($removeAll) {
+               $entries = $xmlPath->query('//entry');
+               foreach ($entries as $entry) {
+                  $entry->parentNode->removeChild($entry);
+               }
+            }
+
+            $formatDom->save($this->xmlCountEntryPath);
+         } else {
+            throw new Exception("XML file not found: $this->xmlCountEntryPath");
          }
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();

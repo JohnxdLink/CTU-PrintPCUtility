@@ -216,4 +216,40 @@
     <device>Computer</device>
     <datetime>2024-05-20 15:22:39</datetime>
   </entry>
+  <entry>
+    <student_id>20</student_id>
+    <stdcustomid>23132</stdcustomid>
+    <lastname>Durais</lastname>
+    <firstname>Eduard</firstname>
+    <middlename>R.</middlename>
+    <course>BSIT</course>
+    <major>Info-Tech</major>
+    <department>COT</department>
+    <device>Computer</device>
+    <datetime>2024-05-20 15:33:49</datetime>
+  </entry>
+  <entry>
+    <student_id>21</student_id>
+    <stdcustomid>231132</stdcustomid>
+    <lastname>Tito</lastname>
+    <firstname>Merry</firstname>
+    <middlename>T.</middlename>
+    <course>BSCS</course>
+    <major>Data Mining</major>
+    <department>COT</department>
+    <device>Printer</device>
+    <datetime>2024-05-20 15:35:15</datetime>
+  </entry>
+  <entry>
+    <student_id>22</student_id>
+    <stdcustomid>34910</stdcustomid>
+    <lastname>Turayung</lastname>
+    <firstname>Welmer</firstname>
+    <middlename>O.</middlename>
+    <course>BSTM</course>
+    <major/>
+    <department>CME</department>
+    <device>Computer</device>
+    <datetime>2024-05-20 21:52:11</datetime>
+  </entry>
 </student>

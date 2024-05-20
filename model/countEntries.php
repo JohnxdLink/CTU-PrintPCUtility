@@ -81,3 +81,4 @@ class countEntries
 }
 
 $execute->countAllEntries();
+header('Location: ../views/admin/index.php');

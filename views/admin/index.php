@@ -29,6 +29,12 @@
             </div>
          </div>
       </div>
+
+      <form class="header-refresh__count" action="../../controller/php/refreshCountEntry.php" method="post">
+         <div>
+            <input type="submit" name="refresh" id="refresh" value="Refresh">
+         </div>
+      </form>
    </header>
    <main class="container-main main">
       <section class="main__container sub-sec">
@@ -153,7 +159,9 @@
 
       <section class="main-table-section table-sec">
          <div class="table-sec__count-entries-container cnt-entry">
-
+            <?php
+            $xml_count_entry = simplexml_load_file('../../model/xml/temp-count-entry.xml');
+            ?>
             <!-- Entries -->
             <div class="table-sec__count-entries-container--flex-column">
                <div class="cnt-entry__container cnt-entry--other">
@@ -162,7 +170,7 @@
                   </div>
                   <div class="cnt_entry__texts">
                      <div>
-                        <h3>00</h3>
+                        <h3><?php echo (!empty($xml_count_entry->entry->overall)) ? $xml_count_entry->entry->overall : "00"; ?></h3>
                      </div>
                      <div>
                         <h5>Overall Entries</h5>
@@ -176,7 +184,7 @@
                   </div>
                   <div class="cnt_entry__texts">
                      <div>
-                        <h3>00</h3>
+                        <h3><?php echo (!empty($xml_count_entry->entry->todayEntries)) ? $xml_count_entry->entry->todayEntries : "00"; ?></h3>
                      </div>
                      <div>
                         <h5>Entries Today</h5>
@@ -191,7 +199,7 @@
                </div>
                <div class="cnt_entry__texts">
                   <div>
-                     <h1>00</h1>
+                     <h1><?php echo (!empty($xml_count_entry->entry->ceas)) ? $xml_count_entry->entry->ceas : "00"; ?></h1>
                   </div>
                   <div>
                      <h4>CEAS</h4>
@@ -205,7 +213,7 @@
                </div>
                <div class="cnt_entry__texts">
                   <div>
-                     <h1>00</h1>
+                     <h1><?php echo (!empty($xml_count_entry->entry->cme)) ? $xml_count_entry->entry->cme : "00"; ?></h1>
                   </div>
                   <div>
                      <h4>CME</h4>
@@ -219,7 +227,7 @@
                </div>
                <div class="cnt_entry__texts">
                   <div>
-                     <h1>00</h1>
+                     <h1><?php echo (!empty($xml_count_entry->entry->coe)) ? $xml_count_entry->entry->coe : "00"; ?></h1>
                   </div>
                   <div>
                      <h4>COE</h4>
@@ -233,7 +241,7 @@
                </div>
                <div class="cnt_entry__texts">
                   <div>
-                     <h1>00</h1>
+                     <h1><?php echo (!empty($xml_count_entry->entry->cot)) ? $xml_count_entry->entry->cot : "00"; ?></h1>
                   </div>
                   <div>
                      <h4>COT</h4>
