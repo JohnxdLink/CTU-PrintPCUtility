@@ -4,6 +4,7 @@ class xmlCtrl
 {
    private $xmlFilePath = '../../model/xml/temp-entry.xml';
    private $xmlSelectEntryPath = '../model/xml/temp-select-entry.xml';
+   private $xmlCountEntryPath = '../model/xml/temp-count-entry.xml';
 
    public function xmlControl($studentId, $lname, $fname, $middleInit, $course, $major, $department, $device)
    {
@@ -92,6 +93,33 @@ class xmlCtrl
       }
    }
 
+   public function countEntry($overall, $todayEntries, $ceas, $cme, $coe, $cot)
+   {
+      try {
+         $xmlcountEntry = simplexml_load_file($this->xmlCountEntryPath);
+         if ($xmlcountEntry === false) {
+            throw new Exception("Failed to load XML file: $this->xmlCountEntryPath");
+         }
+
+         foreach ($xmlcountEntry->entry as $entry) {
+            if ((string)$entry->overall === $overall && (string)$entry->$todayEntries === $todayEntries && (string)$entry->$ceas === $ceas && (string)$entry->cme === $cme && $entry->coe === $coe && (string)$entry->cot === $cot) {
+               return;
+            }
+         }
+
+         $xmlEntry = $xmlcountEntry->addChild('entry');
+         $xmlEntry->addChild('overall', $overall);
+         $xmlEntry->addChild('todayEntries', $todayEntries);
+         $xmlEntry->addChild('ceas', $ceas);
+         $xmlEntry->addChild('cme', $cme);
+         $xmlEntry->addChild('coe', $coe);
+         $xmlEntry->addChild('cot', $cot);
+
+         $this->saveCountXML($xmlcountEntry);
+      } catch (Exception $e) {
+         echo 'Eror: ' . $e->getMessage();
+      }
+   }
 
    public function removeAllChildNodes($removeAll = false)
    {
@@ -164,6 +192,21 @@ class xmlCtrl
          $saveFormatXml = $formatDom->saveXML();
 
          file_put_contents($this->xmlSelectEntryPath, $saveFormatXml);
+      } catch (Exception $e) {
+         echo 'Error: ' . $e->getMessage();
+      }
+   }
+
+   private function saveCountXML($countEntry)
+   {
+      try {
+         $formatDom = new DOMDocument('1.0');
+         $formatDom->preserveWhiteSpace = false;
+         $formatDom->formatOutput = true;
+         $formatDom->loadXML($countEntry->asXML());
+         $saveFormatXml = $formatDom->saveXML();
+
+         file_put_contents($this->xmlCountEntryPath, $saveFormatXml);
       } catch (Exception $e) {
          echo 'Error: ' . $e->getMessage();
       }

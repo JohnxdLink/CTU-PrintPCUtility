@@ -192,4 +192,28 @@
     <device>Computer And Printer</device>
     <datetime>2024-05-16 16:55:15</datetime>
   </entry>
+  <entry>
+    <student_id>18</student_id>
+    <stdcustomid>12313</stdcustomid>
+    <lastname>Tachibana</lastname>
+    <firstname>Sakuya</firstname>
+    <middlename>Y.</middlename>
+    <course>BEED</course>
+    <major>English</major>
+    <department>CEAS</department>
+    <device>Computer And Printer</device>
+    <datetime>2024-05-20 15:09:33</datetime>
+  </entry>
+  <entry>
+    <student_id>19</student_id>
+    <stdcustomid>12313</stdcustomid>
+    <lastname>Pore</lastname>
+    <firstname>Orie</firstname>
+    <middlename>W.</middlename>
+    <course>BEED</course>
+    <major>English</major>
+    <department>CEAS</department>
+    <device>Computer</device>
+    <datetime>2024-05-20 15:22:39</datetime>
+  </entry>
 </student>
