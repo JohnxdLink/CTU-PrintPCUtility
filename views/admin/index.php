@@ -405,7 +405,7 @@
       </section>
    </main>
    <footer class="container-footer">
-      <h6>Under Development @05/11/2024</h6>
+      <h6>Developed by: Castro John Christian BSIT 2B NIGHT 05/11-20/2024</h6>
    </footer>
 
    <script src="../js/admin/script.js"></script>

@@ -373,5 +373,9 @@ table.table__style tbody tr:hover {
 footer.container-footer {
    width: 100%;
    height: 3vh;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
    background-color: #dbb356;
+   color: #28225f;
 }
